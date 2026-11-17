@@ -1,0 +1,63 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Folded paper direction</title>
+<script src="./support.js"></script>
+<link rel="stylesheet" href="ds/origami/tokens.css">
+</head>
+<body>
+<x-dc>
+<helmet>
+<style>
+body{margin:0}
+a{color:#57524e}a:hover{color:#273044}
+</style>
+</helmet>
+<div style="width: 1280px; height: 860px; box-sizing: border-box; background: var(--paper); color: var(--ink); font-family: var(--font-sans); padding: 40px 64px; display: flex; flex-direction: column; gap: 40px">
+  <nav style="display: flex; justify-content: space-between; align-items: center">
+    <div style="font-family: var(--font-serif); font-size: 24px; display: flex; align-items: center; gap: 8px">
+      <svg width="24" height="24" viewBox="0 0 24 24" aria-hidden="true"><path d="M2 11 L22 3 L16 21 L11 14 Z" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linejoin="round"></path><path d="M11 14 L22 3" fill="none" stroke="currentColor" stroke-width="1.5"></path></svg>
+      Paper Plane
+    </div>
+    <div style="display: flex; gap: 32px; font: var(--text-label); text-transform: uppercase; letter-spacing: 0.08em">
+      <a href="#" style="color: var(--ink); text-decoration: none">Deals</a>
+      <a href="#" style="color: var(--ink-muted); text-decoration: none">Watchlist</a>
+      <a href="#" style="color: var(--ink-muted); text-decoration: none">Budget</a>
+    </div>
+  </nav>
+  <div style="display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 64px; align-items: stretch">
+    <div style="display: flex; flex-direction: column; gap: 24px; justify-content: center">
+      <h1 style="margin: 0; font: var(--text-display); letter-spacing: -0.025em">Fly further for less.</h1>
+      <p style="margin: 0; font: var(--text-lead); font-family: var(--font-serif); color: var(--ink-muted); max-width: 480px">Every morning Paper Plane checks fares out of Cape Town and keeps only the ones that fell well below their usual price.</p>
+    </div>
+    <div style="background: var(--sky); position: relative; min-height: 300px; display: flex; flex-direction: column; justify-content: flex-end; padding: 32px; gap: 8px">
+      <svg width="260" height="160" viewBox="0 0 260 160" aria-hidden="true" style="position: absolute; top: 40px; right: 48px"><path d="M10 80 L250 10 L170 150 L120 100 Z" fill="#dfd7dc"></path><path d="M120 100 L250 10 L95 92 Z" fill="#93abea"></path><path d="M95 92 L120 100 L105 135 Z" fill="#273044" opacity="0.35"></path></svg>
+      <div style="font: var(--text-body); color: var(--sky-ink)">Best deal today · CPT to DXB</div>
+      <div style="font: var(--text-stat); color: var(--sky-ink); letter-spacing: -0.02em">R6 400</div>
+      <div style="font: var(--text-body); color: var(--sky-ink)">Dubai, return. 33% below the usual R9 600.</div>
+    </div>
+  </div>
+  <div style="display: flex; flex-direction: column">
+    <div style="display: grid; grid-template-columns: 2fr 1fr 1fr 1fr 1fr; gap: 24px; padding: 12px 0; border-bottom: 1px solid var(--hairline); font: var(--text-label); text-transform: uppercase; letter-spacing: 0.08em; color: var(--ink-muted)">
+      <span>Destination</span><span>Route</span><span>Dates</span><span>Usual</span><span>Today</span>
+    </div>
+    <div style="display: grid; grid-template-columns: 2fr 1fr 1fr 1fr 1fr; gap: 24px; padding: 16px 0; border-bottom: 1px solid var(--hairline); align-items: baseline">
+      <span style="font-family: var(--font-serif); font-size: 24px">London</span><span style="font-family: var(--font-mono); font-size: 14px">CPT–LHR</span><span style="font-size: 15px">4–18 Mar</span><span style="font-size: 15px; color: var(--ink-muted); text-decoration: line-through">R14 500</span><span style="font-size: 20px; font-weight: 500">R9 900</span>
+    </div>
+    <div style="display: grid; grid-template-columns: 2fr 1fr 1fr 1fr 1fr; gap: 24px; padding: 16px 0; border-bottom: 1px solid var(--hairline); align-items: baseline">
+      <span style="font-family: var(--font-serif); font-size: 24px">Mauritius</span><span style="font-family: var(--font-mono); font-size: 14px">CPT–MRU</span><span style="font-size: 15px">22–29 Jan</span><span style="font-size: 15px; color: var(--ink-muted); text-decoration: line-through">R7 800</span><span style="font-size: 20px; font-weight: 500">R5 300</span>
+    </div>
+    <div style="display: grid; grid-template-columns: 2fr 1fr 1fr 1fr 1fr; gap: 24px; padding: 16px 0; border-bottom: 1px solid var(--hairline); align-items: baseline">
+      <span style="font-family: var(--font-serif); font-size: 24px">Bali</span><span style="font-family: var(--font-mono); font-size: 14px">CPT–DPS</span><span style="font-size: 15px">12–26 Apr</span><span style="font-size: 15px; color: var(--ink-muted); text-decoration: line-through">R15 800</span><span style="font-size: 20px; font-weight: 500">R11 400</span>
+    </div>
+  </div>
+</div>
+</x-dc>
+<script type="text/x-dc" data-dc-script data-props='{"$preview":{"width":1280,"height":860}}'>
+class Component extends DCLogic {
+renderVals() { return {}; }
+}
+</script>
+</body>
+</html>

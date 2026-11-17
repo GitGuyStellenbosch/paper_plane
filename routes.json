@@ -1,0 +1,5 @@
+{
+  "origin": "CPT",
+  "currency": "zar",
+  "destinations": ["LHR", "DXB", "MRU", "DPS", "WDH"]
+}

@@ -1,0 +1,62 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Postcards direction</title>
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,700;12..96,800&amp;family=DM+Sans:wght@400;500;600&amp;display=swap">
+<style>
+body{margin:0}
+a{color:#13202b}a:hover{color:#0f6e6e}
+</style>
+</helmet>
+<div style="width: 1280px; height: 860px; box-sizing: border-box; background: #ffffff; color: #13202b; font-family: 'DM Sans', system-ui, sans-serif; padding: 36px 48px; display: flex; flex-direction: column; gap: 24px">
+  <div style="display: flex; justify-content: space-between; align-items: center">
+    <div style="font-family: 'Bricolage Grotesque', sans-serif; font-weight: 800; font-size: 28px; letter-spacing: -0.02em">paper plane</div>
+    <div style="display: flex; gap: 8px; align-items: center">
+      <label for="budget" style="font-size: 14px; color: #4a5866">Spend up to</label>
+      <input id="budget" value="R12 000" style="font: 600 15px 'DM Sans', sans-serif; width: 110px; padding: 10px 12px; border: 2px solid #13202b; border-radius: 10px; color: #13202b; background: #ffffff">
+      <button style="font: 600 15px 'DM Sans', sans-serif; padding: 12px 18px; border: 0; border-radius: 10px; background: #13202b; color: #ffffff; cursor: pointer">Show me where</button>
+    </div>
+  </div>
+  <div style="display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); grid-template-rows: 1fr 1fr; gap: 16px; flex-grow: 1">
+    <div style="grid-column: span 2; grid-row: span 2; background: {{hero}}; border-radius: 20px; padding: 36px; display: flex; flex-direction: column; justify-content: space-between; position: relative; overflow: hidden; color: #ffffff">
+      <div style="position: absolute; width: 340px; height: 340px; border-radius: 50%; background: #ffc845; right: -60px; top: -60px"></div>
+      <svg width="200" height="120" viewBox="0 0 200 120" aria-hidden="true" style="position: absolute; right: 80px; top: 130px"><path d="M6 60 L194 8 L130 112 L92 76 Z" fill="#ffffff"></path><path d="M92 76 L194 8 L72 70 Z" fill="#13202b" opacity="0.18"></path></svg>
+      <div style="position: relative; font-size: 15px; font-weight: 600; background: #ffffff; color: #13202b; padding: 6px 12px; border-radius: 999px; align-self: flex-start">Best deal today · 33% off</div>
+      <div style="position: relative; display: flex; flex-direction: column; gap: 6px">
+        <div style="font-size: 18px; font-weight: 500">Cape Town to</div>
+        <div style="font-family: 'Bricolage Grotesque', sans-serif; font-weight: 800; font-size: 120px; line-height: 0.85; letter-spacing: -0.04em">Dubai</div>
+        <div style="font-size: 22px; font-weight: 600">R6 400 return · 9–19 Feb · Emirates direct</div>
+      </div>
+    </div>
+    <div style="background: #0f6e6e; color: #ffffff; border-radius: 20px; padding: 24px; display: flex; flex-direction: column; justify-content: space-between">
+      <div style="font-size: 14px; font-weight: 600">32% off</div>
+      <div><div style="font-family: 'Bricolage Grotesque', sans-serif; font-weight: 800; font-size: 44px; line-height: 0.9; letter-spacing: -0.03em">Mauritius</div><div style="font-size: 16px; margin-top: 8px">R5 300 · 22–29 Jan</div></div>
+    </div>
+    <div style="background: #ffc845; color: #13202b; border-radius: 20px; padding: 24px; display: flex; flex-direction: column; justify-content: space-between">
+      <div style="font-size: 14px; font-weight: 600">32% off</div>
+      <div><div style="font-family: 'Bricolage Grotesque', sans-serif; font-weight: 800; font-size: 44px; line-height: 0.9; letter-spacing: -0.03em">London</div><div style="font-size: 16px; margin-top: 8px">R9 900 · 4–18 Mar</div></div>
+    </div>
+    <div style="background: #2b3fa8; color: #ffffff; border-radius: 20px; padding: 24px; display: flex; flex-direction: column; justify-content: space-between">
+      <div style="font-size: 14px; font-weight: 600">28% off</div>
+      <div><div style="font-family: 'Bricolage Grotesque', sans-serif; font-weight: 800; font-size: 44px; line-height: 0.9; letter-spacing: -0.03em">Bali</div><div style="font-size: 16px; margin-top: 8px">R11 400 · 12–26 Apr</div></div>
+    </div>
+    <div style="background: #eef2f5; color: #13202b; border-radius: 20px; padding: 24px; display: flex; flex-direction: column; justify-content: space-between">
+      <div style="font-size: 14px; font-weight: 600; color: #4a5866">12 more deals</div>
+      <div><div style="font-family: 'Bricolage Grotesque', sans-serif; font-weight: 800; font-size: 32px; line-height: 0.95; letter-spacing: -0.02em">Istanbul, Windhoek, Zanzibar…</div><a href="#" style="display: inline-block; margin-top: 10px; font-weight: 600; font-size: 16px">See all deals</a></div>
+    </div>
+  </div>
+</div>
+</x-dc>
+<script type="text/x-dc" data-dc-script data-props='{"hero":{"editor":"color","default":"#ff6b4a","options":["#ff6b4a","#0f6e6e","#2b3fa8"]},"$preview":{"width":1280,"height":860}}'>
+class Component extends DCLogic {
+renderVals() { return { hero: this.props.hero ?? '#ff6b4a' }; }
+}
+</script>
+</body>
+</html>

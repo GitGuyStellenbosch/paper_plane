@@ -1,0 +1,84 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Route radar direction</title>
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;700&amp;family=Inter:wght@400;500;600&amp;display=swap">
+<style>
+body{margin:0}
+a{color:#2f5bea}a:hover{color:#1d3fb0}
+</style>
+</helmet>
+<div style="width: 1280px; height: 860px; box-sizing: border-box; background: #eef2f7; color: #14213a; font-family: Inter, system-ui, sans-serif; padding: 40px; display: flex; gap: 32px">
+  <div style="width: 680px; height: 780px; position: relative; background: #ffffff; border-radius: 16px; overflow: hidden; flex: none">
+    <div style="position: absolute; left: 24px; top: 20px; display: flex; flex-direction: column; gap: 4px">
+      <div style="font-family: 'Space Grotesk', sans-serif; font-weight: 700; font-size: 26px">Where R12 000 gets you</div>
+      <div style="font-size: 14px; color: #55627a">Distance = flying time from Cape Town. Filled dot = real deal.</div>
+    </div>
+    <div style="position: absolute; left: 260px; top: 310px; width: 160px; height: 160px; border: 1px solid #d5dce8; border-radius: 50%"></div>
+    <div style="position: absolute; left: 180px; top: 230px; width: 320px; height: 320px; border: 1px solid #d5dce8; border-radius: 50%"></div>
+    <div style="position: absolute; left: 100px; top: 150px; width: 480px; height: 480px; border: 1px solid #d5dce8; border-radius: 50%"></div>
+    <div style="position: absolute; left: 20px; top: 70px; width: 640px; height: 640px; border: 1px dashed #d5dce8; border-radius: 50%"></div>
+    <span style="position: absolute; left: 346px; top: 314px; font-size: 11px; color: #55627a">4h</span>
+    <span style="position: absolute; left: 346px; top: 234px; font-size: 11px; color: #55627a">8h</span>
+    <span style="position: absolute; left: 346px; top: 154px; font-size: 11px; color: #55627a">12h</span>
+    <span style="position: absolute; left: 346px; top: 74px; font-size: 11px; color: #55627a">16h</span>
+    <div style="position: absolute; left: 326px; top: 376px; width: 28px; height: 28px; border-radius: 50%; background: #14213a; color: #ffffff; font-size: 9px; font-weight: 600; display: flex; align-items: center; justify-content: center">CPT</div>
+    <sc-for list="{{dots}}" as="d" hint-placeholder-count="11">
+      <div style="{{d.wrap}}">
+        <span style="{{d.dot}}"></span>
+        <span style="font-size: 12px; font-weight: 600; background: #ffffff; padding: 1px 4px; border-radius: 4px">{{d.code}}</span>
+      </div>
+    </sc-for>
+  </div>
+  <div style="flex-grow: 1; min-width: 0; display: flex; flex-direction: column; gap: 16px">
+    <div style="display: flex; gap: 8px; flex-wrap: wrap">
+      <button style="font: 500 14px Inter, sans-serif; padding: 10px 14px; border-radius: 999px; border: 0; background: #14213a; color: #ffffff; cursor: pointer">Under 12h</button>
+      <button style="font: 500 14px Inter, sans-serif; padding: 10px 14px; border-radius: 999px; border: 1px solid #c7d0de; background: #ffffff; color: #14213a; cursor: pointer">Direct only</button>
+      <button style="font: 500 14px Inter, sans-serif; padding: 10px 14px; border-radius: 999px; border: 1px solid #c7d0de; background: #ffffff; color: #14213a; cursor: pointer">Long weekend</button>
+    </div>
+    <div style="font-family: 'Space Grotesk', sans-serif; font-weight: 700; font-size: 20px; margin-top: 8px">Top deals by flying time</div>
+    <sc-for list="{{list}}" as="l" hint-placeholder-count="6">
+      <div style="background: #ffffff; border-radius: 12px; padding: 14px 18px; display: grid; grid-template-columns: 56px 1fr auto; gap: 12px; align-items: center">
+        <span style="font-family: 'Space Grotesk', sans-serif; font-weight: 700; font-size: 20px; color: {{accent}}">{{l.code}}</span>
+        <div style="min-width: 0"><div style="font-weight: 600; font-size: 16px">{{l.city}}</div><div style="font-size: 13px; color: #55627a">{{l.meta}}</div></div>
+        <div style="text-align: right"><div style="font-weight: 600; font-size: 18px">{{l.fare}}</div><div style="font-size: 13px; font-weight: 600; color: #137a4b">{{l.off}}</div></div>
+      </div>
+    </sc-for>
+  </div>
+</div>
+</x-dc>
+<script type="text/x-dc" data-dc-script data-props='{"accent":{"editor":"color","default":"#2f5bea","options":["#2f5bea","#0f6e6e","#d9532e"]},"$preview":{"width":1280,"height":860}}'>
+class Component extends DCLogic {
+renderVals() {
+  const accent = this.props.accent ?? '#2f5bea';
+  const pts = [
+    ['WDH',326,352,1],['ZNZ',386,325,0],['MRU',425,359,1],['DXB',462,245,1],['IST',392,197,1],
+    ['LHR',300,164,1],['DPS',559,409,1],['PER',539,483,0],['GRU',151,407,0],['JFK',63,230,0],['BKK',584,301,1]
+  ];
+  const dots = pts.map(([code, x, y, deal]) => ({
+    code,
+    wrap: `position: absolute; left: ${x - 7}px; top: ${y - 7}px; display: flex; align-items: center; gap: 4px`,
+    dot: deal
+      ? `width: 14px; height: 14px; border-radius: 50%; background: ${accent}; display: block`
+      : `width: 10px; height: 10px; border-radius: 50%; border: 2px solid ${accent}; background: #ffffff; display: block`
+  }));
+  const list = [
+    ['WDH','Windhoek','2h · direct · 4–8 Dec','R3 100','26% off'],
+    ['MRU','Mauritius','4h 30 · direct · 22–29 Jan','R5 300','32% off'],
+    ['DXB','Dubai','9h 30 · direct · 9–19 Feb','R6 400','33% off'],
+    ['IST','Istanbul','10h · direct · 25 Feb–7 Mar','R8 200','27% off'],
+    ['LHR','London','11h 30 · direct · 4–18 Mar','R9 900','32% off'],
+    ['DPS','Bali','11h + stop · 12–26 Apr','R11 400','28% off']
+  ].map(([code, city, meta, fare, off]) => ({ code, city, meta, fare, off }));
+  return { accent, dots, list };
+}
+}
+</script>
+</body>
+</html>

@@ -1,0 +1,40 @@
+name: Daily patrol
+
+on:
+  schedule:
+    - cron: "0 4 * * *"   # 04:00 UTC = 06:00 in Cape Town
+  workflow_dispatch:       # adds a "Run workflow" button for manual runs
+
+permissions:
+  contents: write          # lets the job commit the new fares
+
+concurrency:
+  group: patrol
+  cancel-in-progress: false
+
+jobs:
+  patrol:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+
+      - name: Fetch today's fares
+        env:
+          FLIGHT_API_TOKEN: ${{ secrets.FLIGHT_API_TOKEN }}
+        run: python patrol.py
+
+      - name: Commit new fares
+        run: |
+          git config user.name "paper-plane-patrol"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add data/
+          if git diff --cached --quiet; then
+            echo "No fare changes today."
+          else
+            git commit -m "Fares for $(TZ=Africa/Johannesburg date +%F)"
+            git push
+          fi

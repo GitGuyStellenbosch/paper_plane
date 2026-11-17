@@ -1,0 +1,70 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Departure board direction</title>
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@600;700&amp;family=JetBrains+Mono:wght@400;600&amp;display=swap">
+<style>
+body{margin:0}
+a{color:#f5b623}a:hover{color:#ffd166}
+</style>
+</helmet>
+<div style="width: 1280px; height: 860px; box-sizing: border-box; background: #0c1420; color: #e6edf5; font-family: 'JetBrains Mono', ui-monospace, monospace; padding: 40px 56px; display: flex; flex-direction: column; gap: 28px">
+  <div style="display: flex; justify-content: space-between; align-items: flex-end; gap: 24px">
+    <div style="display: flex; flex-direction: column; gap: 6px">
+      <div style="font-family: 'Barlow Condensed', 'Arial Narrow', sans-serif; font-weight: 700; font-size: 72px; line-height: 0.9; text-transform: uppercase; letter-spacing: 0.01em">Departures <span style="color: {{accent}}">CPT</span></div>
+      <div style="font-size: 14px; color: #8fa1b8">Cheapest return fares found at 06:00 · Tue 17 Nov</div>
+    </div>
+    <div style="display: flex; gap: 8px">
+      <button style="font: 600 13px 'JetBrains Mono', monospace; background: {{accent}}; color: #1a1300; border: 0; padding: 12px 16px; cursor: pointer">ALL</button>
+      <button style="font: 600 13px 'JetBrains Mono', monospace; background: #17243a; color: #e6edf5; border: 0; padding: 12px 16px; cursor: pointer">DEALS ONLY</button>
+      <button style="font: 600 13px 'JetBrains Mono', monospace; background: #17243a; color: #e6edf5; border: 0; padding: 12px 16px; cursor: pointer">UNDER R10K</button>
+    </div>
+  </div>
+  <div style="display: flex; flex-direction: column; gap: 4px">
+    <div style="display: grid; grid-template-columns: 90px 1.6fr 1.2fr 1fr 1fr 1.1fr; gap: 16px; padding: 10px 16px; font-size: 12px; letter-spacing: 0.1em; color: #8fa1b8">
+      <span>TO</span><span>DESTINATION</span><span>AIRLINE</span><span>DEPARTS</span><span>FARE</span><span>STATUS</span>
+    </div>
+    <sc-for list="{{rows}}" as="r" hint-placeholder-count="8">
+      <div style="display: grid; grid-template-columns: 90px 1.6fr 1.2fr 1fr 1fr 1.1fr; gap: 16px; padding: 16px; background: #131f31; align-items: center; font-size: 18px">
+        <span style="font-weight: 600; color: {{accent}}; font-size: 22px; letter-spacing: 0.08em">{{r.code}}</span>
+        <span style="text-transform: uppercase; letter-spacing: 0.04em">{{r.city}}</span>
+        <span style="font-size: 15px; color: #b6c3d3">{{r.airline}}</span>
+        <span style="font-size: 15px">{{r.date}}</span>
+        <span style="font-weight: 600">{{r.fare}}</span>
+        <span style="{{r.statusStyle}}">{{r.status}}</span>
+      </div>
+    </sc-for>
+  </div>
+  <div style="margin-top: auto; display: flex; justify-content: space-between; font-size: 13px; color: #8fa1b8">
+    <span>Next check 06:00 tomorrow · 50 routes watched</span>
+    <span>Real deal = 25%+ below the 30-day usual fare</span>
+  </div>
+</div>
+</x-dc>
+<script type="text/x-dc" data-dc-script data-props='{"accent":{"editor":"color","default":"#f5b623","options":["#f5b623","#5fd3ff","#ff7a59"]},"$preview":{"width":1280,"height":860}}'>
+class Component extends DCLogic {
+renderVals() {
+  const deal = 'font-size: 14px; font-weight: 600; color: #0c1420; background: #5fd39a; padding: 6px 10px; justify-self: start';
+  const plain = 'font-size: 14px; color: #8fa1b8';
+  const rows = [
+    ['DXB','Dubai','Emirates','09 Feb','R6 400','DEAL −33%',1],
+    ['MRU','Mauritius','Air Mauritius','22 Jan','R5 300','DEAL −32%',1],
+    ['LHR','London','British Airways','04 Mar','R9 900','DEAL −32%',1],
+    ['DPS','Bali','Qatar Airways','12 Apr','R11 400','DEAL −28%',1],
+    ['IST','Istanbul','Turkish','25 Feb','R8 200','DEAL −27%',1],
+    ['WDH','Windhoek','Airlink','04 Dec','R3 100','DEAL −26%',1],
+    ['GRU','São Paulo','LATAM','19 Mar','R12 800','−20% ON TIME',0],
+    ['CDG','Paris','Air France','02 Apr','R11 900','−16% ON TIME',0]
+  ].map(([code, city, airline, date, fare, status, d]) => ({ code, city, airline, date, fare, status, statusStyle: d ? deal : plain }));
+  return { accent: this.props.accent ?? '#f5b623', rows };
+}
+}
+</script>
+</body>
+</html>
