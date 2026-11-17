@@ -1,0 +1,137 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Paper Plane home with fare map, phone</title>
+<script src="./support.js"></script>
+<link rel="stylesheet" href="ds/origami/tokens.css">
+</head>
+<body>
+<x-dc>
+<helmet>
+<style>
+body{margin:0}
+a{color:#57524e}a:hover{color:#273044}
+</style>
+</helmet>
+<div style="width: 390px; height: 1960px; box-sizing: border-box; background: var(--paper); color: var(--ink); font-family: var(--font-sans); padding: 20px 16px 40px; display: flex; flex-direction: column; gap: 32px">
+  <nav style="display: flex; justify-content: space-between; align-items: center">
+    <div style="font-family: var(--font-serif); font-size: 20px; display: flex; align-items: center; gap: 8px">
+      <svg width="20" height="20" viewBox="0 0 24 24" aria-hidden="true"><path d="M2 11 L22 3 L16 21 L11 14 Z" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linejoin="round"></path><path d="M11 14 L22 3" fill="none" stroke="currentColor" stroke-width="1.5"></path></svg>
+      Paper Plane
+    </div>
+    <button aria-label="Open watchlist" style="border: 0; background: transparent; font-size: 22px; color: var(--ink); width: 44px; height: 44px; cursor: pointer">☆</button>
+  </nav>
+
+  <header style="display: flex; flex-direction: column; gap: 10px">
+    <h1 style="margin: 0; font-family: var(--font-serif); font-weight: 400; font-size: 40px; line-height: 1.05; letter-spacing: -0.02em">Where Cape Town can fly for less.</h1>
+    <p style="margin: 0; font-size: 13px; color: var(--ink-muted)">Updated 06:00 today · cached prices, not live</p>
+  </header>
+
+  <section aria-label="Top three deals" style="display: flex; flex-direction: column; gap: 10px">
+    <article style="background: #c2410c; color: #ffffff; padding: 20px; display: flex; flex-direction: column; gap: 6px">
+      <span style="font-size: 13px; font-weight: 600">1 · Great deal</span>
+      <span style="font-size: 40px; font-weight: 600; line-height: 1; letter-spacing: -0.03em">Windhoek</span>
+      <span style="font-size: 20px; font-weight: 600">R5 095 return</span>
+      <span style="font-size: 13px">Best date 45% cheaper than a typical date</span>
+      <span style="font-size: 13px">16–23 Jan · Airlink · direct</span>
+    </article>
+    <div style="display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 10px">
+      <article style="background: #ea7a3c; color: #1d1a16; padding: 16px; display: flex; flex-direction: column; gap: 4px">
+        <span style="font-size: 12px; font-weight: 600">2 · Good deal</span>
+        <span style="font-size: 26px; font-weight: 600; line-height: 1.05">Dubai</span>
+        <span style="font-size: 16px; font-weight: 600">R11 400</span>
+        <span style="font-size: 12px">22% cheaper date · 11 Jan</span>
+      </article>
+      <article style="background: #f2b38a; color: #1d1a16; padding: 16px; display: flex; flex-direction: column; gap: 4px">
+        <span style="font-size: 12px; font-weight: 600">3 · Fair</span>
+        <span style="font-size: 26px; font-weight: 600; line-height: 1.05">Bali</span>
+        <span style="font-size: 16px; font-weight: 600">R14 470</span>
+        <span style="font-size: 12px">18% cheaper date · 5 Feb</span>
+      </article>
+    </div>
+  </section>
+
+  <section style="display: flex; flex-direction: column; gap: 12px">
+    <h2 style="margin: 0; font-family: var(--font-serif); font-weight: 400; font-size: 26px">Tracking 28 destinations</h2>
+    <div style="display: flex; gap: 6px; overflow: hidden">
+      <button style="font: 500 13px var(--font-sans); padding: 8px 12px; border-radius: 999px; border: 1px solid var(--ink); background: var(--ink); color: var(--on-ink); flex: none">All</button>
+      <button style="font: 500 13px var(--font-sans); padding: 8px 12px; border-radius: 999px; border: 1px solid var(--hairline); background: transparent; color: var(--ink); flex: none">Africa</button>
+      <button style="font: 500 13px var(--font-sans); padding: 8px 12px; border-radius: 999px; border: 1px solid var(--hairline); background: transparent; color: var(--ink); flex: none">Islands</button>
+      <button style="font: 500 13px var(--font-sans); padding: 8px 12px; border-radius: 999px; border: 1px solid var(--hairline); background: transparent; color: var(--ink); flex: none">Europe</button>
+      <button style="font: 500 13px var(--font-sans); padding: 8px 12px; border-radius: 999px; border: 1px solid var(--hairline); background: transparent; color: var(--ink); flex: none">Asia</button>
+    </div>
+    <label for="maxprice-phone" style="display: flex; justify-content: space-between; font-size: 13px; color: var(--ink-muted)">Up to <span style="font-family: var(--font-mono); color: var(--ink)">R15 000</span></label>
+    <input id="maxprice-phone" type="range" min="3000" max="20000" value="15000" style="width: 100%">
+    <div style="display: flex; flex-direction: column">
+      <sc-for list="{{rows}}" as="r" hint-placeholder-count="10">
+        <div style="display: grid; grid-template-columns: 10px minmax(0, 1fr) auto 32px; gap: 10px; align-items: center; min-height: 48px; border-bottom: 1px solid var(--hairline)">
+          <span style="{{r.swatch}}"></span>
+          <span style="min-width: 0; font-size: 15px">{{r.city}} <span style="font-family: var(--font-mono); font-size: 11px; color: var(--ink-muted)">{{r.code}}</span></span>
+          <span style="font-size: 15px; font-weight: 500">{{r.price}}</span>
+          <button aria-label="Add to watchlist" style="border: 0; background: transparent; font-size: 16px; color: var(--ink-muted); height: 44px; cursor: pointer">{{r.star}}</button>
+        </div>
+      </sc-for>
+    </div>
+    <a href="#" style="font: var(--text-label); text-transform: uppercase; letter-spacing: 0.08em; padding: 12px 0">Show all 28</a>
+  </section>
+
+  <section style="background: var(--paper-raised); padding: 16px 0; display: flex; flex-direction: column; gap: 12px; margin-left: -16px; margin-right: -16px">
+    <div style="padding: 0 16px; display: flex; justify-content: space-between; align-items: baseline">
+      <h2 style="margin: 0; font-family: var(--font-serif); font-weight: 400; font-size: 26px">Fares on the map</h2>
+      <span style="font-size: 12px; color: var(--ink-muted)">Pinch to zoom</span>
+    </div>
+    <div style="position: relative; width: 358px; height: 134px; margin-left: 16px">
+      <svg width="358" height="134" viewBox="0 0 358 134" aria-hidden="true" style="position: absolute; left: 0; top: 0"><path fill="#a8b5d2" fill-opacity="0.45" d="M162.1 58.6 L163.1 51.6 L169.1 44.7 L188.9 42.7 L210.8 48.6 L213.8 51.6 L221.8 67.5 L229.7 67.5 L218.8 82.4 L218.8 94.3 L213.8 103.2 L210.8 108.2 L198.9 114.1 L196.9 112.2 L190.9 97.3 L191.9 85.4 L188.0 75.4 L171.0 75.4 L162.1 65.5 Z M169.1 43.7 L170.0 36.7 L177.0 35.7 L174.0 31.8 L181.0 28.8 L187.0 25.8 L188.9 22.8 L184.0 19.9 L188.9 16.9 L198.9 9.9 L208.8 9.9 L218.8 12.9 L223.8 19.9 L218.8 34.7 L206.8 38.7 L204.9 41.7 L198.9 39.7 L193.9 41.7 L190.9 35.7 L187.0 35.7 L182.0 37.7 L174.0 43.7 Z M173.0 29.8 L181.0 28.8 L179.0 26.8 L177.0 23.8 L174.0 21.8 L173.0 24.8 L175.0 26.8 Z M204.9 38.7 L214.8 43.7 L213.8 49.6 L221.8 66.5 L230.7 63.5 L236.7 56.6 L235.7 53.6 L244.6 54.6 L250.6 59.6 L255.6 71.5 L258.6 64.5 L266.5 57.6 L270.5 58.6 L276.5 63.5 L278.4 71.5 L282.4 78.4 L284.4 69.5 L287.4 67.5 L286.4 58.6 L295.3 56.6 L300.3 49.6 L299.3 41.7 L304.3 42.7 L307.3 44.7 L308.3 36.7 L318.2 31.8 L320.2 26.8 L313.2 24.8 L338.1 19.9 L358.0 13.9 L358.0 7.9 L318.2 6.0 L278.4 2.0 L248.6 6.0 L233.7 9.9 L223.8 12.9 L218.8 19.9 L223.8 34.7 L218.8 37.7 Z M308.3 48.6 L313.2 45.7 L318.2 44.7 L320.2 39.7 L319.2 34.7 L317.2 39.7 L311.3 45.7 Z M273.5 74.4 L282.4 83.4 L284.4 85.4 L278.4 80.4 Z M283.4 85.4 L292.4 87.3 L293.4 87.9 L284.4 86.6 Z M287.4 78.4 L295.3 72.5 L297.3 78.4 L294.4 83.4 L288.4 82.4 Z M309.3 80.4 L319.2 82.4 L328.2 89.3 L319.2 88.3 L312.3 83.4 Z M292.4 101.2 L300.3 96.3 L308.3 91.3 L315.2 91.3 L320.2 90.3 L324.2 98.3 L331.2 105.2 L329.2 113.2 L324.2 118.1 L318.2 117.1 L313.2 114.1 L309.3 110.2 L302.3 112.2 L293.4 113.2 L292.4 105.2 Z M350.0 114.1 L356.0 117.1 L353.0 120.1 L349.1 125.1 L345.1 125.1 L350.0 120.1 Z M11.9 13.9 L19.9 8.9 L39.8 9.9 L59.7 8.9 L84.5 6.9 L99.4 10.9 L117.3 19.9 L124.3 27.8 L113.4 34.7 L109.4 37.7 L103.4 41.7 L98.5 48.6 L99.4 54.6 L96.5 50.6 L89.5 49.6 L82.5 53.6 L82.5 58.6 L89.5 58.6 L92.5 64.5 L96.5 70.5 L101.4 71.5 L94.5 67.5 L87.5 64.5 L74.6 59.6 L67.6 50.6 L62.6 46.7 L55.7 39.7 L55.7 31.8 L44.8 21.8 L29.8 19.9 L14.9 19.9 Z M134.2 19.9 L159.1 9.9 L159.1 1.0 L119.3 1.0 L109.4 3.0 L124.3 11.9 Z M101.4 71.5 L119.3 69.5 L129.3 79.4 L144.2 85.4 L140.2 93.3 L131.3 105.2 L121.3 114.1 L113.4 124.1 L109.4 133.0 L105.4 129.0 L107.4 114.1 L108.4 97.3 L98.5 85.4 L99.4 79.4 Z M227.7 91.3 L228.7 95.3 L225.7 104.2 L222.8 103.2 L222.8 96.3 Z M258.6 69.7 L260.3 72.0 L259.1 73.5 L258.4 72.0 Z"></path></svg>
+      <div style="position: absolute; left: 193px; top: 109px; width: 8px; height: 8px; background: var(--ink)"></div>
+      <sc-for list="{{dots}}" as="d" hint-placeholder-count="28">
+        <span style="{{d.style}}"></span>
+      </sc-for>
+    </div>
+    <div style="margin: 0 16px; background: var(--paper); padding: 14px 16px; display: flex; flex-direction: column; gap: 4px">
+      <span style="font-size: 12px; font-weight: 600; color: #9a3412">Good deal · tapped on the map</span>
+      <span style="font-family: var(--font-serif); font-size: 22px">Dubai</span>
+      <span style="font-size: 17px; font-weight: 600">R11 400 return</span>
+      <span style="font-size: 13px; color: var(--ink-muted)">11–18 Jan · Kenya Airways · 1 stop</span>
+      <a href="#" style="font-size: 13px; font-weight: 600; padding-top: 6px">See dates and price history</a>
+    </div>
+    <div style="padding: 0 16px; display: flex; gap: 12px; flex-wrap: wrap; font-size: 12px">
+      <sc-for list="{{legend}}" as="l" hint-placeholder-count="5">
+        <span style="display: flex; align-items: center; gap: 5px"><span style="{{l.swatch}}"></span>{{l.label}}</span>
+      </sc-for>
+    </div>
+  </section>
+</div>
+</x-dc>
+<script type="text/x-dc" data-dc-script data-props='{"$preview":{"width":390,"height":1960}}'>
+class Component extends DCLogic {
+renderVals() {
+  const C = { 5: '#c2410c', 4: '#ea7a3c', 3: '#f2b38a', 2: '#a8b5d2', 1: '#5b6b8c' };
+  const WORD = { 5: 'Great deal', 4: 'Good deal', 3: 'Fair', 2: 'Typical', 1: 'Pricier' };
+  const step = s => s >= 0.30 ? 5 : s >= 0.20 ? 4 : s >= 0.10 ? 3 : s >= 0 ? 2 : 1;
+  const P = {WDH:[196,102],DXB:[234,54],DPS:[294,88],MRU:[236,99],LHR:[179,28],ZNZ:[218,86],NBO:[216,81],VFA:[205,97],IST:[208,38],CDG:[181,31],AMS:[184,27],LIS:[170,41],FCO:[191,38],ATH:[203,42],DOH:[230,54],BKK:[279,66],SIN:[282,78],KUL:[280,77],HKG:[292,57],PER:[294,111],SYD:[329,113],JFK:[106,39],GRU:[133,103],MLE:[252,75],SEZ:[234,84],CMN:[171,46],CAI:[210,50]};
+  const routes = [
+    ['WDH','Windhoek',5095,0.452],['DXB','Dubai',11400,0.219],['DPS','Bali',14470,0.181],['VFA','Victoria Falls',7420,0.175],
+    ['MLE','Maldives',16900,0.17],['ZNZ','Zanzibar',6734,0.168],['BKK','Bangkok',13200,0.165],['ATH','Athens',14800,0.162],
+    ['CAI','Cairo',12100,0.16],['KUL','Kuala Lumpur',13900,0.158],['DOH','Doha',10900,0.157],['SEZ','Seychelles',9800,0.156],
+    ['MRU','Mauritius',11069,0.155],['LIS','Lisbon',14200,0.14],['CMN','Casablanca',13100,0.13],['IST','Istanbul',11800,0.12],
+    ['JFK','New York',18900,0.11],['LHR','London',13560,0.109],['PER','Perth',15100,0.09],['CDG','Paris',14600,0.08],
+    ['GRU','São Paulo',13800,0.07],['FCO','Rome',14900,0.06],['NBO','Nairobi',7900,0.05],['SIN','Singapore',14100,0.04],
+    ['AMS','Amsterdam',14400,0.02],['HKG','Hong Kong',16200,-0.03],['SYD','Sydney',17800,-0.05]
+  ];
+  const rand = n => 'R' + n.toLocaleString('en-ZA').replace(/,/g, ' ');
+  const dots = routes.map(([code, , , s]) => {
+    const [x, y] = P[code], st = step(s), r = st >= 4 ? 4 : 3;
+    return { style: `position: absolute; left: ${x - r}px; top: ${y - r}px; width: ${r * 2}px; height: ${r * 2}px; border-radius: 50%; background: ${C[st]}; box-shadow: 0 0 0 1.5px #f3ede6` };
+  });
+  const rows = routes.slice(0, 8).map(([code, city, price, s]) => ({
+    code, city, price: rand(price), star: code === 'DXB' ? '★' : '☆',
+    swatch: `width: 10px; height: 10px; border-radius: 50%; background: ${C[step(s)]}; display: block`
+  }));
+  const legend = [5, 4, 3, 2, 1].map(st => ({ label: WORD[st], swatch: `width: 10px; height: 10px; border-radius: 50%; background: ${C[st]}; display: block` }));
+  return { rows, dots, legend };
+}
+}
+</script>
+</body>
+</html>

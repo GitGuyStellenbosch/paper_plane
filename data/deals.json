@@ -1,5 +1,5 @@
 {
-  "updated": "2026-11-17T19:59+02:00",
+  "updated": "2026-11-17T20:10+02:00",
   "origin": "CPT",
   "routes": [
     {
@@ -17,14 +17,299 @@
       "drop": 0.0,
       "days_of_history": 1,
       "date_spread": {
-        "oneway_min": 2055,
+        "oneway_min": 2058,
         "oneway_median": 3752,
         "dates": 37,
-        "score": 0.452
+        "score": 0.451
       },
-      "deal_score": 0.452,
+      "history": [
+        {
+          "day": "2026-11-17",
+          "price": 5095
+        }
+      ],
+      "deal_score": 0.451,
       "score_basis": "date_spread",
       "is_deal": true,
+      "status": "cached, unconfirmed"
+    },
+    {
+      "fetched_day": "2026-11-17",
+      "origin": "CPT",
+      "destination": "CDG",
+      "price": 11992,
+      "currency": "ZAR",
+      "airline": "ET",
+      "transfers": 1,
+      "depart_date": "2026-12-27",
+      "return_date": "2027-01-17",
+      "link": "/search/CPT2712CDG17011?t=ET17983842001798439400000980CPTADDCDG18002205001800277200000885CDGADDCPT_844894f8ba2e4ab1532d269f5858d365_58250&search_date=17112026&expected_price_uuid=01a1e8c2-eac8-8030-2061-2a28040ddbe8&static_fare_key=TY%7CP0%7CH1%7CL1_2_0%7CCH0%7CR0%7CTBC1&itinerary_key=9P-QxMpm8hodIC-c_C-iDA&origin_airports=1&destination_airports=0&expected_price_source=share&expected_price_currency=zar&expected_price=11992",
+      "usual_price": 11992,
+      "drop": 0.0,
+      "days_of_history": 1,
+      "date_spread": {
+        "oneway_min": 4872,
+        "oneway_median": 7905,
+        "dates": 8,
+        "score": 0.384
+      },
+      "history": [
+        {
+          "day": "2026-11-17",
+          "price": 11992
+        }
+      ],
+      "deal_score": 0.384,
+      "score_basis": "date_spread",
+      "is_deal": true,
+      "status": "cached, unconfirmed"
+    },
+    {
+      "fetched_day": "2026-11-17",
+      "origin": "CPT",
+      "destination": "CMN",
+      "price": 15280,
+      "currency": "ZAR",
+      "airline": "EK",
+      "transfers": 1,
+      "depart_date": "2027-01-18",
+      "return_date": "2027-01-25",
+      "link": "/search/CPT1801CMN25011?t=EK18002970001800360600001180CPTDXBCMN18008862001800963300001165CMNDXBCPT_08109981791aed670ef3cf92ca87c930_74552&search_date=14112026&expected_price_uuid=01a1db32-f534-8030-e833-7bd428bfd6f1&static_fare_key=TY%7CP0%7CH1%7CL1_2_46%7CCH0%7CR0%7CTBC1&itinerary_key=jrGcISWVNYS-yxdcBqsYvg&expected_price_source=share&expected_price_currency=zar&expected_price=15280",
+      "usual_price": 15280,
+      "drop": 0.0,
+      "days_of_history": 1,
+      "date_spread": {
+        "oneway_min": 6455,
+        "oneway_median": 10252,
+        "dates": 14,
+        "score": 0.37
+      },
+      "history": [
+        {
+          "day": "2026-11-17",
+          "price": 15280
+        }
+      ],
+      "deal_score": 0.37,
+      "score_basis": "date_spread",
+      "is_deal": true,
+      "status": "cached, unconfirmed"
+    },
+    {
+      "fetched_day": "2026-11-17",
+      "origin": "CPT",
+      "destination": "MAD",
+      "price": 17331,
+      "currency": "ZAR",
+      "airline": "TK",
+      "transfers": 1,
+      "depart_date": "2026-12-08",
+      "return_date": "2026-12-21",
+      "link": "/search/CPT0812MAD21121?t=TK17966913001796811900002070CPTISTMAD17978442001797941100001555MADISTCPT_875010ca511cc54865b28cd95fce37ca_83860&search_date=17112026&expected_price_uuid=01a1ea98-0311-8030-2b15-cc111da4653e&static_fare_key=TY%7CP1%7CH1%7CL1_1_23%7CCH0%7CR0%7CTBC1&itinerary_key=Nkg2WngiGxA1J32eWdQx8g&expected_price_source=share&expected_price_currency=zar&expected_price=17331",
+      "usual_price": 17331,
+      "drop": 0.0,
+      "days_of_history": 1,
+      "date_spread": {
+        "oneway_min": 4374,
+        "oneway_median": 6700,
+        "dates": 20,
+        "score": 0.347
+      },
+      "history": [
+        {
+          "day": "2026-11-17",
+          "price": 17331
+        }
+      ],
+      "deal_score": 0.347,
+      "score_basis": "date_spread",
+      "is_deal": true,
+      "status": "cached, unconfirmed"
+    },
+    {
+      "fetched_day": "2026-11-17",
+      "origin": "CPT",
+      "destination": "SEZ",
+      "price": 9794,
+      "currency": "ZAR",
+      "airline": "4Z",
+      "transfers": 1,
+      "depart_date": "2027-02-18",
+      "return_date": "2027-03-01",
+      "link": "/search/CPT1802SEZ01031?t=HM18029751001803069900001460CPTJNBSEZ18039156001803941400000550SEZJNBCPT_52154d70fded345952f02bfbdded9318_48892&search_date=11112026&expected_price_uuid=01a1ca78-41e6-8031-638e-e6feccc3393f&static_fare_key=TY%7CP1%7CH1%7CL1_1_30%7CCH0%7CR0%7CTBC1&itinerary_key=Z9L_N0DJdyDbrbgT2vi6Rw&expected_price_source=share&expected_price_currency=zar&expected_price=9794",
+      "usual_price": 9794,
+      "drop": 0.0,
+      "days_of_history": 1,
+      "date_spread": {
+        "oneway_min": 4694,
+        "oneway_median": 6708,
+        "dates": 26,
+        "score": 0.3
+      },
+      "history": [
+        {
+          "day": "2026-11-17",
+          "price": 9794
+        }
+      ],
+      "deal_score": 0.3,
+      "score_basis": "date_spread",
+      "is_deal": true,
+      "status": "cached, unconfirmed"
+    },
+    {
+      "fetched_day": "2026-11-17",
+      "origin": "CPT",
+      "destination": "IST",
+      "price": 10701,
+      "currency": "ZAR",
+      "airline": "TK",
+      "transfers": 0,
+      "depart_date": "2027-03-07",
+      "return_date": "2027-03-22",
+      "link": "/search/CPT0703IST22031?t=TK18043809001804425000000675CPTIST18057207001805756400000655ISTCPT_fddc51bf8ef26b27397f00b31c51af64_52170&search_date=16112026&expected_price_uuid=01a1e214-ca65-8030-6e5e-a91d259b811b&static_fare_key=TY%7CP1%7CH1%7CL1_1_23%7CCH0%7CR0%7CTBC1&itinerary_key=jRyaRbtncZaTi4Eer71lTA&expected_price_source=share&expected_price_currency=zar&expected_price=10701",
+      "usual_price": 10701,
+      "drop": 0.0,
+      "days_of_history": 1,
+      "date_spread": {
+        "oneway_min": 5160,
+        "oneway_median": 7066,
+        "dates": 64,
+        "score": 0.27
+      },
+      "history": [
+        {
+          "day": "2026-11-17",
+          "price": 10701
+        }
+      ],
+      "deal_score": 0.27,
+      "score_basis": "date_spread",
+      "is_deal": true,
+      "status": "cached, unconfirmed"
+    },
+    {
+      "fetched_day": "2026-11-17",
+      "origin": "CPT",
+      "destination": "HKG",
+      "price": 16359,
+      "currency": "ZAR",
+      "airline": "QR",
+      "transfers": 1,
+      "depart_date": "2027-01-16",
+      "return_date": "2027-03-02",
+      "link": "/search/CPT1601HKG02031?t=QR18001029001800197400001215CPTDOHHKG18040107001804069800001345HKGDOHCPT_101c0b91b37353400e406591d3531390_79492&search_date=16112026&expected_price_uuid=01a1e317-1f9d-8030-a09e-a08da8f8591f&static_fare_key=TY%7CP0%7CH1%7CL1_2_46%7CCH0%7CR0%7CTBC1&itinerary_key=FpAX2RPb-yAeuD3_IRCyLg&expected_price_source=share&expected_price_currency=zar&expected_price=16359",
+      "usual_price": 16359,
+      "drop": 0.0,
+      "days_of_history": 1,
+      "date_spread": {
+        "oneway_min": 8658,
+        "oneway_median": 11651,
+        "dates": 9,
+        "score": 0.257
+      },
+      "history": [
+        {
+          "day": "2026-11-17",
+          "price": 16359
+        }
+      ],
+      "deal_score": 0.257,
+      "score_basis": "date_spread",
+      "is_deal": true,
+      "status": "cached, unconfirmed"
+    },
+    {
+      "fetched_day": "2026-11-17",
+      "origin": "CPT",
+      "destination": "BKK",
+      "price": 12415,
+      "currency": "ZAR",
+      "airline": "QR",
+      "transfers": 1,
+      "depart_date": "2026-11-18",
+      "return_date": "2026-12-02",
+      "link": "/search/CPT1811BKK02121?t=QR17950053001795114200001515CPTDOHBKK17961804001796232300001165BKKDOHCPT_82ef8cb7bf41f678e7996753c00da4e9_60475&search_date=17112026&expected_price_uuid=01a1e7ad-e92c-8030-a85a-23f4f1a1b349&static_fare_key=TY%7CP1%7CH1%7CL1_2_0%7CCH0%7CR0%7CTBC1&itinerary_key=8x6WKquBWZ1vyiR4zogQ_g&expected_price_source=share&expected_price_currency=zar&expected_price=12415",
+      "usual_price": 12415,
+      "drop": 0.0,
+      "days_of_history": 1,
+      "date_spread": {
+        "oneway_min": 6655,
+        "oneway_median": 8832,
+        "dates": 31,
+        "score": 0.246
+      },
+      "history": [
+        {
+          "day": "2026-11-17",
+          "price": 12415
+        }
+      ],
+      "deal_score": 0.246,
+      "score_basis": "date_spread",
+      "is_deal": false,
+      "status": "cached, unconfirmed"
+    },
+    {
+      "fetched_day": "2026-11-17",
+      "origin": "CPT",
+      "destination": "MLE",
+      "price": 15727,
+      "currency": "ZAR",
+      "airline": "QR",
+      "transfers": 1,
+      "depart_date": "2027-02-13",
+      "return_date": "2027-02-19",
+      "link": "/search/CPT1302MLE19021?t=QR18025221001802616600001395CPTDOHMLE18030300001803119400001670MLEDOHCPT_aebf445d1090a41b88185fd710bd0ce7_76557&search_date=17112026&expected_price_uuid=01a1e9e4-8653-8040-2423-4141c29cb265&static_fare_key=TY%7CP1%7CH1%7CL1_2_0%7CCH0%7CR0%7CTBC1&itinerary_key=TnbDQYEtHF9TsKkFHXbG5g&expected_price_source=share&expected_price_currency=zar&expected_price=15727",
+      "usual_price": 15727,
+      "drop": 0.0,
+      "days_of_history": 1,
+      "date_spread": {
+        "oneway_min": 7668,
+        "oneway_median": 10167,
+        "dates": 39,
+        "score": 0.246
+      },
+      "history": [
+        {
+          "day": "2026-11-17",
+          "price": 15727
+        }
+      ],
+      "deal_score": 0.246,
+      "score_basis": "date_spread",
+      "is_deal": false,
+      "status": "cached, unconfirmed"
+    },
+    {
+      "fetched_day": "2026-11-17",
+      "origin": "CPT",
+      "destination": "VFA",
+      "price": 7420,
+      "currency": "ZAR",
+      "airline": "KQ",
+      "transfers": 0,
+      "depart_date": "2027-01-22",
+      "return_date": "2027-01-25",
+      "link": "/search/CPT2201VFA25011?t=KQ18006282001800638400000170CPTVFA18008727001800884100000190VFACPT_0390a67f37118d9b597f98e2816e0974_36051&search_date=13112026&expected_price_uuid=01a1d4cc-071a-8030-64a8-42b6a02c432b&static_fare_key=TY%7CP1_JW%7CH1%7CL1_2_0%7CCH0%7CR0%7CTBC1&itinerary_key=PDY87eKihWUi3Cc8q0uc3A&expected_price_source=share&expected_price_currency=zar&expected_price=7420",
+      "usual_price": 7420,
+      "drop": 0.0,
+      "days_of_history": 1,
+      "date_spread": {
+        "oneway_min": 3490,
+        "oneway_median": 4604,
+        "dates": 51,
+        "score": 0.242
+      },
+      "history": [
+        {
+          "day": "2026-11-17",
+          "price": 7420
+        }
+      ],
+      "deal_score": 0.242,
+      "score_basis": "date_spread",
+      "is_deal": false,
       "status": "cached, unconfirmed"
     },
     {
@@ -43,11 +328,172 @@
       "days_of_history": 1,
       "date_spread": {
         "oneway_min": 7068,
-        "oneway_median": 9045,
+        "oneway_median": 9060,
         "dates": 57,
-        "score": 0.219
+        "score": 0.22
       },
-      "deal_score": 0.219,
+      "history": [
+        {
+          "day": "2026-11-17",
+          "price": 11400
+        }
+      ],
+      "deal_score": 0.22,
+      "score_basis": "date_spread",
+      "is_deal": false,
+      "status": "cached, unconfirmed"
+    },
+    {
+      "fetched_day": "2026-11-17",
+      "origin": "CPT",
+      "destination": "ZNZ",
+      "price": 6734,
+      "currency": "ZAR",
+      "airline": "ET",
+      "transfers": 1,
+      "depart_date": "2027-01-17",
+      "return_date": "2027-01-18",
+      "link": "/search/CPT1701ZNZ18011?t=ET18001938001800242100000745CPTADDZNZ18002739001800363600001555ZNZADDCPT_6b54aa8d07f40f4592176dfdb76c53be_32855&search_date=14112026&expected_price_uuid=01a1d8e4-a16a-8030-2fde-ee22c31d8c77&static_fare_key=TY%7CP1%7CH1%7CL1_2_0%7CCH0%7CR0%7CTBC1&itinerary_key=ggxqnCBe5t6JEfyN-MJlFA&expected_price_source=share&expected_price_currency=zar&expected_price=6734",
+      "usual_price": 6734,
+      "drop": 0.0,
+      "days_of_history": 1,
+      "date_spread": {
+        "oneway_min": 5418,
+        "oneway_median": 6904,
+        "dates": 46,
+        "score": 0.215
+      },
+      "history": [
+        {
+          "day": "2026-11-17",
+          "price": 6734
+        }
+      ],
+      "deal_score": 0.215,
+      "score_basis": "date_spread",
+      "is_deal": false,
+      "status": "cached, unconfirmed"
+    },
+    {
+      "fetched_day": "2026-11-17",
+      "origin": "CPT",
+      "destination": "MIA",
+      "price": 19136,
+      "currency": "ZAR",
+      "airline": "UA",
+      "transfers": 2,
+      "depart_date": "2026-12-27",
+      "return_date": "2027-01-11",
+      "link": "/search/CPT2712MIA11011?t=UA17984046001798483200001730CPTIADORDMIA17996574001799770200001460MIAIADCPT_a8a2882e90abf282eae4c3853d79a264_93029&search_date=16112026&expected_price_uuid=01a1e56c-b7e3-8030-6a67-dd4c0fc7e7a7&static_fare_key=TY%7CP1%7CH0%7CL1_1_0%7CCH0%7CR0%7CTBC1&itinerary_key=aw_7fhVHUFdMBE3w24o2sw&expected_price_source=share&expected_price_currency=zar&expected_price=19136",
+      "usual_price": 19136,
+      "drop": 0.0,
+      "days_of_history": 1,
+      "date_spread": {
+        "oneway_min": 15108,
+        "oneway_median": 19187,
+        "dates": 5,
+        "score": 0.213
+      },
+      "history": [
+        {
+          "day": "2026-11-17",
+          "price": 19136
+        }
+      ],
+      "deal_score": 0.213,
+      "score_basis": "date_spread",
+      "is_deal": false,
+      "status": "cached, unconfirmed"
+    },
+    {
+      "fetched_day": "2026-11-17",
+      "origin": "CPT",
+      "destination": "EZE",
+      "price": 16208,
+      "currency": "ZAR",
+      "airline": "LA",
+      "transfers": 1,
+      "depart_date": "2027-03-11",
+      "return_date": "2027-03-21",
+      "link": "/search/CPT1103EZE21031?t=LA18047796001804867200001760CPTGRUEZE18056484001805719200000880EZEGRUCPT_9591fc3796b77c785ed30fc93b73d663_78895&search_date=17112026&expected_price_uuid=01a1e91e-412d-8030-ac02-e7c3205c9549&static_fare_key=TY%7CP0%7CH1%7CL0%7CCH0%7CR0%7CTBC0&itinerary_key=pHliG8_3qd_PydxTobee9w&origin_airports=1&destination_airports=0&expected_price_source=share&expected_price_currency=zar&expected_price=16208",
+      "usual_price": 16208,
+      "drop": 0.0,
+      "days_of_history": 1,
+      "date_spread": {
+        "oneway_min": 9360,
+        "oneway_median": 11883,
+        "dates": 27,
+        "score": 0.212
+      },
+      "history": [
+        {
+          "day": "2026-11-17",
+          "price": 16208
+        }
+      ],
+      "deal_score": 0.212,
+      "score_basis": "date_spread",
+      "is_deal": false,
+      "status": "cached, unconfirmed"
+    },
+    {
+      "fetched_day": "2026-11-17",
+      "origin": "CPT",
+      "destination": "MUC",
+      "price": 12824,
+      "currency": "ZAR",
+      "airline": "QR",
+      "transfers": 1,
+      "depart_date": "2026-11-18",
+      "return_date": "2026-11-25",
+      "link": "/search/CPT1811MUC25111?t=QR17950053001795094700001550CPTDOHMUC17956203001795689000001085MUCDOHCPT_352c2f2864e04aa1ab3ba9598d0a2261_62424&search_date=17112026&expected_price_uuid=01a1e8ec-ee82-8031-6bdc-aef5f0696058&static_fare_key=TY%7CP1%7CH1%7CL1_2_0%7CCH0%7CR0%7CTBC1&itinerary_key=QwhGjo7015WZvmKbeTedGw&expected_price_source=share&expected_price_currency=zar&expected_price=12824",
+      "usual_price": 12824,
+      "drop": 0.0,
+      "days_of_history": 1,
+      "date_spread": {
+        "oneway_min": 4929,
+        "oneway_median": 6160,
+        "dates": 7,
+        "score": 0.2
+      },
+      "history": [
+        {
+          "day": "2026-11-17",
+          "price": 12824
+        }
+      ],
+      "deal_score": 0.2,
+      "score_basis": "date_spread",
+      "is_deal": false,
+      "status": "cached, unconfirmed"
+    },
+    {
+      "fetched_day": "2026-11-17",
+      "origin": "CPT",
+      "destination": "NRT",
+      "price": 15749,
+      "currency": "ZAR",
+      "airline": "QR",
+      "transfers": 1,
+      "depart_date": "2027-01-15",
+      "return_date": "2027-01-27",
+      "link": "/search/CPT1501NRT27011?t=QR18000411001800186900002010CPTDOHNRT18010689001801132200001475NRTDOHCPT_41b368a0442001ea7fdb9671cd156f7a_76561&search_date=16112026&expected_price_uuid=01a1e5ab-08ad-8030-6430-5eae6afa553d&static_fare_key=TY%7CP0%7CH1%7CL1_2_0%7CCH0%7CR0%7CTBC1&itinerary_key=vORqmwQgBYK_2AZjZbgQpg&origin_airports=1&destination_airports=0&expected_price_source=share&expected_price_currency=zar&expected_price=15749",
+      "usual_price": 15749,
+      "drop": 0.0,
+      "days_of_history": 1,
+      "date_spread": {
+        "oneway_min": 8577,
+        "oneway_median": 10517,
+        "dates": 37,
+        "score": 0.184
+      },
+      "history": [
+        {
+          "day": "2026-11-17",
+          "price": 15749
+        }
+      ],
+      "deal_score": 0.184,
       "score_basis": "date_spread",
       "is_deal": false,
       "status": "cached, unconfirmed"
@@ -72,6 +518,12 @@
         "dates": 43,
         "score": 0.181
       },
+      "history": [
+        {
+          "day": "2026-11-17",
+          "price": 14470
+        }
+      ],
       "deal_score": 0.181,
       "score_basis": "date_spread",
       "is_deal": false,
@@ -93,11 +545,79 @@
       "days_of_history": 1,
       "date_spread": {
         "oneway_min": 6308,
-        "oneway_median": 7464,
+        "oneway_median": 7470,
         "dates": 64,
-        "score": 0.155
+        "score": 0.156
       },
-      "deal_score": 0.155,
+      "history": [
+        {
+          "day": "2026-11-17",
+          "price": 11069
+        }
+      ],
+      "deal_score": 0.156,
+      "score_basis": "date_spread",
+      "is_deal": false,
+      "status": "cached, unconfirmed"
+    },
+    {
+      "fetched_day": "2026-11-17",
+      "origin": "CPT",
+      "destination": "TNR",
+      "price": 20454,
+      "currency": "ZAR",
+      "airline": "FA",
+      "transfers": 1,
+      "depart_date": "2026-12-08",
+      "return_date": "2026-12-13",
+      "link": "/search/CPT0812TNR13121?t=4Z17967687001796824800000875CPTJNBTNR17971731001797203700000570TNRJNBCPT_1897425c2ee3092a8b21eee8e478f2ff_99409&search_date=16112026&expected_price_uuid=01a1e2e7-8e5a-8030-eda8-f82a8fb5b428&static_fare_key=TY%7CP1%7CH1%7CL1_1_20%7CCH0%7CR0%7CTBC1&itinerary_key=CTzhPr0CRVtRKovhJPSXHg&expected_price_source=share&expected_price_currency=zar&expected_price=20454",
+      "usual_price": 20454,
+      "drop": 0.0,
+      "days_of_history": 1,
+      "date_spread": {
+        "oneway_min": 8064,
+        "oneway_median": 9439,
+        "dates": 29,
+        "score": 0.146
+      },
+      "history": [
+        {
+          "day": "2026-11-17",
+          "price": 20454
+        }
+      ],
+      "deal_score": 0.146,
+      "score_basis": "date_spread",
+      "is_deal": false,
+      "status": "cached, unconfirmed"
+    },
+    {
+      "fetched_day": "2026-11-17",
+      "origin": "CPT",
+      "destination": "GRU",
+      "price": 10699,
+      "currency": "ZAR",
+      "airline": "LA",
+      "transfers": 0,
+      "depart_date": "2026-12-24",
+      "return_date": "2027-02-01",
+      "link": "/search/CPT2412GRU01021?t=LA17981268001798138500000495CPTGRU18015222001801588800000810GRUJNBCPT_58f6ea0abe93dc78ca6cd9ffe6069d2d_52043&search_date=13112026&expected_price_uuid=01a1d49c-5d25-8030-6b98-3770fdcf8e0f&static_fare_key=TY%7CP0%7CH1%7CL0%7CCH0%7CR0%7CTBC0&itinerary_key=_BIwzKtVe5SDVxacdIoRqw&origin_airports=1&destination_airports=0&expected_price_source=share&expected_price_currency=zar&expected_price=10699",
+      "usual_price": 10699,
+      "drop": 0.0,
+      "days_of_history": 1,
+      "date_spread": {
+        "oneway_min": 7005,
+        "oneway_median": 8018,
+        "dates": 54,
+        "score": 0.126
+      },
+      "history": [
+        {
+          "day": "2026-11-17",
+          "price": 10699
+        }
+      ],
+      "deal_score": 0.126,
       "score_basis": "date_spread",
       "is_deal": false,
       "status": "cached, unconfirmed"
@@ -122,8 +642,541 @@
         "dates": 18,
         "score": 0.109
       },
+      "history": [
+        {
+          "day": "2026-11-17",
+          "price": 13560
+        }
+      ],
       "deal_score": 0.109,
       "score_basis": "date_spread",
+      "is_deal": false,
+      "status": "cached, unconfirmed"
+    },
+    {
+      "fetched_day": "2026-11-17",
+      "origin": "CPT",
+      "destination": "ADD",
+      "price": 17968,
+      "currency": "ZAR",
+      "airline": "FA",
+      "transfers": 1,
+      "depart_date": "2026-12-30",
+      "return_date": "2027-01-07",
+      "link": "/search/CPT3012ADD07011?t=ET17986539001798695300000630CPTJNBADD17993163001799362200000825ADDLUNJNBCPT_d494190ccb99aa882f83962a24624b3e_88854&search_date=12112026&expected_price_uuid=01a1cff5-d60b-8030-e098-bfb9b0e75837&static_fare_key=TY%7CP1%7CH1%7CL0%7CCH0%7CR0%7CTBC0&itinerary_key=m9YHLftrQ0XdtViKR216Og&expected_price_source=share&expected_price_currency=zar&expected_price=17968",
+      "usual_price": 17968,
+      "drop": 0.0,
+      "days_of_history": 1,
+      "date_spread": {
+        "oneway_min": 9424,
+        "oneway_median": 10404,
+        "dates": 6,
+        "score": 0.094
+      },
+      "history": [
+        {
+          "day": "2026-11-17",
+          "price": 17968
+        }
+      ],
+      "deal_score": 0.094,
+      "score_basis": "date_spread",
+      "is_deal": false,
+      "status": "cached, unconfirmed"
+    },
+    {
+      "fetched_day": "2026-11-17",
+      "origin": "CPT",
+      "destination": "DOH",
+      "price": 12746,
+      "currency": "ZAR",
+      "airline": "QR",
+      "transfers": 0,
+      "depart_date": "2027-01-27",
+      "return_date": "2027-01-31",
+      "link": "/search/CPT2701DOH31011?t=QR18010779001801116000000575CPTDOH18013599001801391400000585DOHCPT_ed273d6d22115c83a45ff9e4ed31ed9b_61961&search_date=16112026&expected_price_uuid=01a1e5d1-f9d0-8030-e1fe-ab9fcd63e588&static_fare_key=TY%7CP0%7CH1%7CL1_2_46%7CCH0%7CR0%7CTBC1&itinerary_key=tabKNz81owI2udWpp7jJFw&expected_price_source=share&expected_price_currency=zar&expected_price=12746",
+      "usual_price": 12746,
+      "drop": 0.0,
+      "days_of_history": 1,
+      "date_spread": {
+        "oneway_min": 7236,
+        "oneway_median": 7955,
+        "dates": 21,
+        "score": 0.09
+      },
+      "history": [
+        {
+          "day": "2026-11-17",
+          "price": 12746
+        }
+      ],
+      "deal_score": 0.09,
+      "score_basis": "date_spread",
+      "is_deal": false,
+      "status": "cached, unconfirmed"
+    },
+    {
+      "fetched_day": "2026-11-17",
+      "origin": "CPT",
+      "destination": "ACC",
+      "price": 14920,
+      "currency": "ZAR",
+      "airline": "ET",
+      "transfers": 1,
+      "depart_date": "2026-12-04",
+      "return_date": "2026-12-05",
+      "link": "/search/CPT0412ACC05121?t=ET17963946001796447400001000CPTADDACC17965008001796562000000900ACCADDCPT_acf6358119a298f4837c43cbc240c37c_73912&search_date=12112026&expected_price_uuid=01a1ce04-e04d-8031-2cc0-9c704fe7694a&static_fare_key=TY%7CP1%7CH1%7CL1_2_46%7CCH0%7CR0%7CTBC1&itinerary_key=WBEQhSFhkBr2XcAb2aofIw&expected_price_source=share&expected_price_currency=zar&expected_price=14920",
+      "usual_price": 14920,
+      "drop": 0.0,
+      "days_of_history": 1,
+      "date_spread": {
+        "oneway_min": 8428,
+        "oneway_median": 9193,
+        "dates": 5,
+        "score": 0.083
+      },
+      "history": [
+        {
+          "day": "2026-11-17",
+          "price": 14920
+        }
+      ],
+      "deal_score": 0.083,
+      "score_basis": "date_spread",
+      "is_deal": false,
+      "status": "cached, unconfirmed"
+    },
+    {
+      "fetched_day": "2026-11-17",
+      "origin": "CPT",
+      "destination": "SYD",
+      "price": 20402,
+      "currency": "ZAR",
+      "airline": "QR",
+      "transfers": 1,
+      "depart_date": "2027-02-09",
+      "return_date": "2027-02-23",
+      "link": "/search/CPT0902SYD23021?t=QR18021765001802373600002745CPTDOHSYD18034170001803489900001755SYDDOHCPT_d61fa47ea1ad7f5fab843241517e4934_102631&search_date=10112026&expected_price_uuid=01a1c774-1f20-8031-2f33-c922165377c2&static_fare_key=TY%7CP1%7CH1%7CL1_2_46%7CCH0%7CR0%7CTBC1&itinerary_key=sf8VthP2qDtJMTFAfIeDXQ&expected_price_source=share&expected_price_currency=zar&expected_price=20402",
+      "usual_price": 20402,
+      "drop": 0.0,
+      "days_of_history": 1,
+      "date_spread": {
+        "oneway_min": 11304,
+        "oneway_median": 12308,
+        "dates": 12,
+        "score": 0.082
+      },
+      "history": [
+        {
+          "day": "2026-11-17",
+          "price": 20402
+        }
+      ],
+      "deal_score": 0.082,
+      "score_basis": "date_spread",
+      "is_deal": false,
+      "status": "cached, unconfirmed"
+    },
+    {
+      "fetched_day": "2026-11-17",
+      "origin": "CPT",
+      "destination": "AUH",
+      "price": 14328,
+      "currency": "ZAR",
+      "airline": "ET",
+      "transfers": 1,
+      "depart_date": "2027-01-11",
+      "return_date": "2027-01-18",
+      "link": "/search/CPT1101AUH18011?t=EY17996802001799809800002040CPTADDAUH18002379001800278700000800AUHJNBCPT_a5253ad4247e7bf9db88582909c39738_69908&search_date=14112026&expected_price_uuid=01a1d9a6-5b77-8030-6312-bfe445d814a5&static_fare_key=TY%7CP0%7CH1%7CL0%7CCH0%7CR0%7CTBC0&itinerary_key=uf0lAw48Gz1DwztdoOH5wg&expected_price_source=share&expected_price_currency=zar&expected_price=14328",
+      "usual_price": 14328,
+      "drop": 0.0,
+      "days_of_history": 1,
+      "date_spread": {
+        "oneway_min": 6640,
+        "oneway_median": 7138,
+        "dates": 22,
+        "score": 0.07
+      },
+      "history": [
+        {
+          "day": "2026-11-17",
+          "price": 14328
+        }
+      ],
+      "deal_score": 0.07,
+      "score_basis": "date_spread",
+      "is_deal": false,
+      "status": "cached, unconfirmed"
+    },
+    {
+      "fetched_day": "2026-11-17",
+      "origin": "CPT",
+      "destination": "MPM",
+      "price": 8873,
+      "currency": "ZAR",
+      "airline": "GE",
+      "transfers": 1,
+      "depart_date": "2027-01-20",
+      "return_date": "2027-01-27",
+      "link": "/search/CPT2001MPM27011?t=GE18004608001800477600000280CPTJNBMPM18010329001801050000000285MPMJNBCPT_99e9f097777f7cd6965f8c5f7a3a6445_43450&search_date=15112026&expected_price_uuid=01a1e0d8-7336-8030-6200-5863da6041b1&static_fare_key=TY%7CP1%7CH1%7CL0%7CCH0%7CR0%7CTBC0&itinerary_key=HYDd30s2xBUVBrMmp3NtGA&expected_price_source=share&expected_price_currency=zar&expected_price=8873",
+      "usual_price": 8873,
+      "drop": 0.0,
+      "days_of_history": 1,
+      "date_spread": {
+        "oneway_min": 4414,
+        "oneway_median": 4624,
+        "dates": 7,
+        "score": 0.045
+      },
+      "history": [
+        {
+          "day": "2026-11-17",
+          "price": 8873
+        }
+      ],
+      "deal_score": 0.045,
+      "score_basis": "date_spread",
+      "is_deal": false,
+      "status": "cached, unconfirmed"
+    },
+    {
+      "fetched_day": "2026-11-17",
+      "origin": "CPT",
+      "destination": "JFK",
+      "price": 21659,
+      "currency": "ZAR",
+      "airline": "KQ",
+      "transfers": 1,
+      "depart_date": "2026-12-18",
+      "return_date": "2027-01-03",
+      "link": "/search/CPT1812JFK03011?t=KQ17976042001797662100001385CPTNBOJFK17989833001799128800002005JFKNBOCPT_8aeb33738e4d94f2230c6c38c6821744_105229&search_date=16112026&expected_price_uuid=01a1e556-d6fd-8030-62c6-8a2260784b0d&static_fare_key=TY%7CP1_JW%7CH1%7CL1_2_46%7CCH0%7CR0%7CTBC1&itinerary_key=gsKde1zIJZbqlrcfa5PB2g&origin_airports=1&destination_airports=0&expected_price_source=share&expected_price_currency=zar&expected_price=21659",
+      "usual_price": 21659,
+      "drop": 0.0,
+      "days_of_history": 1,
+      "date_spread": {
+        "oneway_min": 9908,
+        "oneway_median": 10299,
+        "dates": 11,
+        "score": 0.038
+      },
+      "history": [
+        {
+          "day": "2026-11-17",
+          "price": 21659
+        }
+      ],
+      "deal_score": 0.038,
+      "score_basis": "date_spread",
+      "is_deal": false,
+      "status": "cached, unconfirmed"
+    },
+    {
+      "fetched_day": "2026-11-17",
+      "origin": "CPT",
+      "destination": "HRE",
+      "price": 9018,
+      "currency": "ZAR",
+      "airline": "GE",
+      "transfers": 1,
+      "depart_date": "2027-01-05",
+      "return_date": "2027-01-06",
+      "link": "/search/CPT0501HRE06011?t=GE17991306001799174100000725CPTJNBHRE17992152001799251800000610HREJNBCPT_d535af9d52c73a65968b14402fae2519_45004&search_date=11112026&expected_price_uuid=01a1caeb-0d8c-8030-e50c-a2f1e6f329a1&static_fare_key=TY%7CP1%7CH1%7CL0%7CCH0%7CR0%7CTBC0&itinerary_key=cCENIGBS2Kww-NpKS4hu8w&expected_price_source=share&expected_price_currency=zar&expected_price=9018",
+      "usual_price": 9018,
+      "drop": 0.0,
+      "days_of_history": 1,
+      "date_spread": {
+        "oneway_min": 3718,
+        "oneway_median": 3838,
+        "dates": 8,
+        "score": 0.031
+      },
+      "history": [
+        {
+          "day": "2026-11-17",
+          "price": 9018
+        }
+      ],
+      "deal_score": 0.031,
+      "score_basis": "date_spread",
+      "is_deal": false,
+      "status": "cached, unconfirmed"
+    },
+    {
+      "fetched_day": "2026-11-17",
+      "origin": "CPT",
+      "destination": "NBO",
+      "price": 8388,
+      "currency": "ZAR",
+      "airline": "DT",
+      "transfers": 1,
+      "depart_date": "2027-01-21",
+      "return_date": "2027-01-25",
+      "link": "/search/CPT2101NBO25011?t=DT18005439001800638400001515CPTNBJNBO18009012001800942300000745NBONBJCPT_edf7959547af2ea9027080b0a0ba418d_41037&search_date=13112026&expected_price_uuid=01a1d3e9-1396-8031-2bec-5019dfb52bd0&static_fare_key=TY%7CP1%7CH0%7CL1_1_23%7CCH0%7CR0%7CTBC1&itinerary_key=4D1Gvo5f5lhW4JePpV3UjA&expected_price_source=share&expected_price_currency=zar&expected_price=8388",
+      "usual_price": 8388,
+      "drop": 0.0,
+      "days_of_history": 1,
+      "date_spread": {
+        "oneway_min": 5879,
+        "oneway_median": 6048,
+        "dates": 20,
+        "score": 0.028
+      },
+      "history": [
+        {
+          "day": "2026-11-17",
+          "price": 8388
+        }
+      ],
+      "deal_score": 0.028,
+      "score_basis": "date_spread",
+      "is_deal": false,
+      "status": "cached, unconfirmed"
+    },
+    {
+      "fetched_day": "2026-11-17",
+      "origin": "CPT",
+      "destination": "GBE",
+      "price": 6271,
+      "currency": "ZAR",
+      "airline": "BP",
+      "transfers": 0,
+      "depart_date": "2027-03-19",
+      "return_date": "2027-03-26",
+      "link": "/search/CPT1903GBE26031?t=BP18054792001805486400000120CPTGBE18060741001806081300000120GBECPT_b8928dc1a89de9a936a8ae93c41e7fe9_30543&search_date=17112026&expected_price_uuid=01a1e87d-8212-8031-2ceb-dc6edceb808c&static_fare_key=TY%7CP1%7CH1%7CL1_1_23%7CCH1%7CR0%7CTBC1&itinerary_key=kIThfkv5hhJQPL1d8R8iyA&expected_price_source=share&expected_price_currency=zar&expected_price=6271",
+      "usual_price": 6271,
+      "drop": 0.0,
+      "days_of_history": 1,
+      "date_spread": {
+        "oneway_min": 3459,
+        "oneway_median": 3521,
+        "dates": 2,
+        "score": null
+      },
+      "history": [
+        {
+          "day": "2026-11-17",
+          "price": 6271
+        }
+      ],
+      "deal_score": null,
+      "score_basis": "none",
+      "is_deal": false,
+      "status": "cached, unconfirmed"
+    },
+    {
+      "fetched_day": "2026-11-17",
+      "origin": "CPT",
+      "destination": "ZRH",
+      "price": 10333,
+      "currency": "ZAR",
+      "airline": "DE",
+      "transfers": 1,
+      "depart_date": "2026-11-19",
+      "return_date": "2026-12-01",
+      "link": "/search/CPT1911ZRH01121?t=DE17951133001795172100001040CPTFRAZRH17961267001796208300001300ZRHFRACPT_57e86a2b481d9988d938b36cda5c8f3d_50492&search_date=13112026&expected_price_uuid=01a1d67d-cdc0-8031-2890-49df47a0591c&static_fare_key=TY%7CP1%7CH0%7CL0%7CCH0%7CR0%7CTBC0&itinerary_key=itWBwF34d8fQde_YKz0TMQ&expected_price_source=share&expected_price_currency=zar&expected_price=10333",
+      "usual_price": 10333,
+      "drop": 0.0,
+      "days_of_history": 1,
+      "date_spread": {
+        "oneway_min": 5324,
+        "oneway_median": 5324,
+        "dates": 1,
+        "score": null
+      },
+      "history": [
+        {
+          "day": "2026-11-17",
+          "price": 10333
+        }
+      ],
+      "deal_score": null,
+      "score_basis": "none",
+      "is_deal": false,
+      "status": "cached, unconfirmed"
+    },
+    {
+      "fetched_day": "2026-11-17",
+      "origin": "CPT",
+      "destination": "FCO",
+      "price": 11593,
+      "currency": "ZAR",
+      "airline": "ET",
+      "transfers": 1,
+      "depart_date": "2026-11-29",
+      "return_date": "2026-12-06",
+      "link": "/search/CPT2911FCO06121?t=ET17959650001796013300000865CPTADDFCO17965980001796652600000850FCOADDCPT_22dba7623db3d410d7ca9b97261ebe2d_56562&search_date=14112026&expected_price_uuid=01a1da10-d101-8031-26c6-c6946a7cc9e1&static_fare_key=TY%7CP1%7CH0%7CL0%7CCH0%7CR0%7CTBC0&itinerary_key=66npNsZdNA2Ai6RF0DlqaA&origin_airports=1&destination_airports=0&expected_price_source=share&expected_price_currency=zar&expected_price=11593",
+      "usual_price": 11593,
+      "drop": 0.0,
+      "days_of_history": 1,
+      "date_spread": {
+        "oneway_min": 5611,
+        "oneway_median": 7888,
+        "dates": 2,
+        "score": null
+      },
+      "history": [
+        {
+          "day": "2026-11-17",
+          "price": 11593
+        }
+      ],
+      "deal_score": null,
+      "score_basis": "none",
+      "is_deal": false,
+      "status": "cached, unconfirmed"
+    },
+    {
+      "fetched_day": "2026-11-17",
+      "origin": "CPT",
+      "destination": "KGL",
+      "price": 12006,
+      "currency": "ZAR",
+      "airline": "FA",
+      "transfers": 1,
+      "depart_date": "2027-04-05",
+      "return_date": "2027-04-25",
+      "link": "/search/CPT0504KGL25041?t=WB18069084001806960600000870CPTJNBKGL18086469001808683500000610KGLJNBCPT_2d46d99bdf629b551d815a906361e8dd_59247&search_date=12112026&expected_price_uuid=01a1cef6-5b37-8040-ac62-aaf6c1ad8f87&static_fare_key=TY%7CP0%7CH1%7CL0%7CCH0%7CR0%7CTBC0&itinerary_key=-m8xowiKpC__kY8a___mqg&expected_price_source=share&expected_price_currency=zar&expected_price=12006",
+      "usual_price": 12006,
+      "drop": 0.0,
+      "days_of_history": 1,
+      "date_spread": {
+        "oneway_min": null,
+        "oneway_median": null,
+        "dates": 0,
+        "score": null
+      },
+      "history": [
+        {
+          "day": "2026-11-17",
+          "price": 12006
+        }
+      ],
+      "deal_score": null,
+      "score_basis": "none",
+      "is_deal": false,
+      "status": "cached, unconfirmed"
+    },
+    {
+      "fetched_day": "2026-11-17",
+      "origin": "CPT",
+      "destination": "FRA",
+      "price": 12713,
+      "currency": "ZAR",
+      "airline": "ET",
+      "transfers": 1,
+      "depart_date": "2027-01-06",
+      "return_date": "2027-01-15",
+      "link": "/search/CPT0601FRA15011?t=ET17992482001799300700000935CPTADDFRA18000489001800108600000935FRAADDCPT_dbb74d2a5b700a860bc371580984effa_63751&search_date=11112026&expected_price_uuid=01a1c9ac-ba71-8030-2c35-67661bf9607c&static_fare_key=TY%7CP1%7CH0%7CL1_1_23%7CCH0%7CR0%7CTBC1&itinerary_key=pv0OU3TpCKYKsFsx8gxpPw&expected_price_source=share&expected_price_currency=zar&expected_price=12713",
+      "usual_price": 12713,
+      "drop": 0.0,
+      "days_of_history": 1,
+      "date_spread": {
+        "oneway_min": 8578,
+        "oneway_median": 8578,
+        "dates": 1,
+        "score": null
+      },
+      "history": [
+        {
+          "day": "2026-11-17",
+          "price": 12713
+        }
+      ],
+      "deal_score": null,
+      "score_basis": "none",
+      "is_deal": false,
+      "status": "cached, unconfirmed"
+    },
+    {
+      "fetched_day": "2026-11-17",
+      "origin": "CPT",
+      "destination": "AMS",
+      "price": 15300,
+      "currency": "ZAR",
+      "airline": "QR",
+      "transfers": 1,
+      "depart_date": "2027-07-10",
+      "return_date": "2027-07-31",
+      "link": "/search/CPT1007AMS31071?t=QR18152478001815314100001105CPTDOHAMS18170505001817140800001505AMSDOHCPT_acadb762ba7f5a905f7d96cb752a5872_76966&search_date=10112026&expected_price_uuid=01a1c6c7-649f-8040-a3a7-600278caa6b3&static_fare_key=TY%7CP0%7CH1%7CL1_2_46%7CCH0%7CR0%7CTBC1&itinerary_key=G_fLWHYm9I9R-FI3EGnS0w&expected_price_source=share&expected_price_currency=zar&expected_price=15300",
+      "usual_price": 15300,
+      "drop": 0.0,
+      "days_of_history": 1,
+      "date_spread": {
+        "oneway_min": 4634,
+        "oneway_median": 9884,
+        "dates": 3,
+        "score": null
+      },
+      "history": [
+        {
+          "day": "2026-11-17",
+          "price": 15300
+        }
+      ],
+      "deal_score": null,
+      "score_basis": "none",
+      "is_deal": false,
+      "status": "cached, unconfirmed"
+    },
+    {
+      "fetched_day": "2026-11-17",
+      "origin": "CPT",
+      "destination": "AKL",
+      "price": 28249,
+      "currency": "ZAR",
+      "airline": "SQ",
+      "transfers": 1,
+      "depart_date": "2027-09-07",
+      "return_date": "2027-09-20",
+      "link": "/search/CPT0709AKL20091?t=SQ18203136001820441400001530CPTSINAKL18214494001821518700001755AKLSINCPT_27fa3e6140f12213e8c683c736abf570_138200&search_date=13112026&expected_price_uuid=01a1d3e8-93fe-8031-6fc2-3e4e27a1eec0&static_fare_key=TY%7CP1%7CH0%7CL1_1_25%7CCH0%7CR0%7CTBC1&itinerary_key=tiLChxBbwtLPkp4Yk8aK_w&expected_price_source=share&expected_price_currency=zar&expected_price=28249",
+      "usual_price": 28249,
+      "drop": 0.0,
+      "days_of_history": 1,
+      "date_spread": {
+        "oneway_min": null,
+        "oneway_median": null,
+        "dates": 0,
+        "score": null
+      },
+      "history": [
+        {
+          "day": "2026-11-17",
+          "price": 28249
+        }
+      ],
+      "deal_score": null,
+      "score_basis": "none",
+      "is_deal": false,
+      "status": "cached, unconfirmed"
+    },
+    {
+      "fetched_day": "2026-11-17",
+      "origin": "CPT",
+      "destination": "PER",
+      "price": 29431,
+      "currency": "ZAR",
+      "airline": "SA",
+      "transfers": 1,
+      "depart_date": "2026-11-27",
+      "return_date": "2026-12-11",
+      "link": "/search/CPT2711PER11121?t=QF17957889001795871700001020CPTJNBPER17969949001797032100000980PERJNBCPT_4966af17f46ad0ab40e2a23bc6b45180_142229&search_date=17112026&expected_price_uuid=01a1ea8a-aa2f-8031-2ba6-0fea79a6ed66&static_fare_key=TY%7CP1%7CH1%7CL1_1_30%7CCH0%7CR0%7CTBC1&itinerary_key=OBKOr4YPQuxOXQ1Ef675Ug&expected_price_source=share&expected_price_currency=zar&expected_price=29431",
+      "usual_price": 29431,
+      "drop": 0.0,
+      "days_of_history": 1,
+      "date_spread": {
+        "oneway_min": 8561,
+        "oneway_median": 12952,
+        "dates": 3,
+        "score": null
+      },
+      "history": [
+        {
+          "day": "2026-11-17",
+          "price": 29431
+        }
+      ],
+      "deal_score": null,
+      "score_basis": "none",
       "is_deal": false,
       "status": "cached, unconfirmed"
     }

@@ -3,3 +3,5 @@
 .env.*
 !.env.example
 *.env
+_site/
+__pycache__/

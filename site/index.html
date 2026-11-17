@@ -1,0 +1,471 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Paper Plane</title>
+<meta name="description" content="Cheap flights out of Cape Town, checked every morning and coloured by how good each deal is.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Hanken+Grotesk:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500&family=Source+Serif+4:opsz,wght@8..60,400;8..60,500&display=swap">
+<style>
+/* Layout: A's paper frame and serif type; C's bold deal tiles; a list panel and a fare map that sit side by side on laptops and stack (list, then map) on phones. */
+:root {
+  --paper: #f5efec;
+  --paper-raised: #efe7e0;
+  --ink: #3f3a36;
+  --ink-muted: #68635f;
+  --hairline: #e0d8d3;
+  --on-ink: #f5efec;
+  --land: rgba(168, 181, 210, 0.45);
+  --focus: #3f3a36;
+  --step5: #c2410c;
+  --step4: #ea7a3c;
+  --step3: #f2b38a;
+  --step2: #a8b5d2;
+  --step1: #5b6b8c;
+  --none: #c9c2bc;
+  --font-serif: "Source Serif 4", Georgia, serif;
+  --font-sans: "Hanken Grotesk", -apple-system, system-ui, "Segoe UI", sans-serif;
+  --font-mono: "IBM Plex Mono", ui-monospace, Consolas, monospace;
+  color-scheme: light;
+}
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme="light"]) {
+    --paper: #1d1a16; --paper-raised: #25221d; --ink: #f7f1e5; --ink-muted: #a8a196; --hairline: #3a352f;
+    --on-ink: #1d1a16; --land: rgba(168, 181, 210, 0.22); --focus: #f7f1e5; --none: #4a453e;
+    color-scheme: dark;
+  }
+}
+:root[data-theme="dark"] {
+  --paper: #1d1a16; --paper-raised: #25221d; --ink: #f7f1e5; --ink-muted: #a8a196; --hairline: #3a352f;
+  --on-ink: #1d1a16; --land: rgba(168, 181, 210, 0.22); --focus: #f7f1e5; --none: #4a453e;
+  color-scheme: dark;
+}
+* { box-sizing: border-box; }
+html { -webkit-text-size-adjust: 100%; }
+body {
+  margin: 0; background: var(--paper); color: var(--ink);
+  font-family: var(--font-sans); font-size: 16px; line-height: 1.55;
+}
+.wrap {
+  max-width: 1200px; margin: 0 auto;
+  padding-left: max(16px, env(safe-area-inset-left, 0px));
+  padding-right: max(16px, env(safe-area-inset-right, 0px));
+}
+a { color: inherit; }
+button { font: inherit; color: inherit; }
+:focus-visible { outline: 2px solid var(--focus); outline-offset: 3px; }
+[hidden] { display: none !important; }
+
+nav.top { display: flex; justify-content: space-between; align-items: center; padding-block: 20px; }
+.brand { font-family: var(--font-serif); font-size: 22px; display: flex; align-items: center; gap: 8px; text-decoration: none; }
+.brand svg { width: 22px; height: 22px; }
+.navlinks { display: flex; gap: 24px; font-size: 13px; font-weight: 600; letter-spacing: 0.08em; text-transform: uppercase; }
+.navlinks a { text-decoration: none; color: var(--ink-muted); }
+.navlinks a:hover { color: var(--ink); }
+
+header.intro { display: flex; justify-content: space-between; align-items: flex-end; gap: 24px 40px; flex-wrap: wrap; padding-block: 24px 32px; }
+h1 { margin: 0; font-family: var(--font-serif); font-weight: 400; font-size: clamp(38px, 6vw, 64px); line-height: 1.02; letter-spacing: -0.025em; max-width: 14ch; text-wrap: balance; }
+.meta { margin: 0; font-size: 14px; color: var(--ink-muted); }
+@media (min-width: 760px) { .meta { text-align: right; } }
+
+h2 { margin: 0; font-family: var(--font-serif); font-weight: 400; font-size: 28px; line-height: 1.2; }
+
+/* Top three deal tiles */
+.top3 { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 16px; }
+.tile {
+  border: 0; text-align: left; cursor: pointer; padding: 24px; min-height: 240px;
+  display: flex; flex-direction: column; justify-content: space-between; gap: 16px;
+}
+.tile .rank { font-size: 14px; font-weight: 600; }
+.tile .to { font-size: 15px; }
+.tile .city { font-size: clamp(34px, 4vw, 48px); font-weight: 600; line-height: 1; letter-spacing: -0.03em; overflow-wrap: anywhere; }
+.tile .price { font-size: 22px; font-weight: 600; font-variant-numeric: tabular-nums; }
+.tile .small { font-size: 14px; }
+.tile .body { display: flex; flex-direction: column; gap: 6px; }
+@media (max-width: 759px) {
+  .top3 { grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 10px; }
+  .top3 .tile:first-child { grid-column: 1 / -1; min-height: 0; }
+  .top3 .tile:not(:first-child) { min-height: 0; padding: 16px; }
+  .top3 .tile:not(:first-child) .city { font-size: 26px; }
+  .top3 .tile:not(:first-child) .price { font-size: 17px; }
+  .top3 .tile:not(:first-child) .meta-line, .top3 .tile:not(:first-child) .to { display: none; }
+}
+
+/* List + map */
+.main {
+  display: grid; gap: 24px; padding-block: 48px;
+  grid-template-columns: minmax(0, 1fr);
+  grid-template-areas: "list" "map";
+}
+@media (min-width: 1000px) {
+  .main { grid-template-columns: minmax(0, 1.9fr) minmax(0, 1fr); grid-template-areas: "map list"; align-items: start; }
+}
+.panel-list { grid-area: list; display: flex; flex-direction: column; gap: 14px; min-width: 0; }
+.panel-map { grid-area: map; background: var(--paper-raised); padding: 24px; display: flex; flex-direction: column; gap: 16px; min-width: 0; }
+@media (max-width: 759px) { .panel-map { margin-inline: calc(-1 * max(16px, env(safe-area-inset-left, 0px))); padding: 16px; } }
+
+.chips { display: flex; gap: 6px; flex-wrap: wrap; }
+.chip {
+  font-size: 13px; font-weight: 500; padding: 7px 12px; border-radius: 999px; cursor: pointer;
+  border: 1px solid var(--hairline); background: transparent; min-height: 36px;
+}
+.chip[aria-pressed="true"] { background: var(--ink); color: var(--on-ink); border-color: var(--ink); }
+.range { display: flex; flex-direction: column; gap: 4px; }
+.range label { display: flex; justify-content: space-between; font-size: 13px; color: var(--ink-muted); }
+.range output { font-family: var(--font-mono); color: var(--ink); }
+.range input { width: 100%; accent-color: var(--step5); }
+
+.rows { list-style: none; margin: 0; padding: 0; }
+.row {
+  display: grid; grid-template-columns: 12px minmax(0, 1fr) auto 40px; gap: 12px; align-items: center;
+  border-bottom: 1px solid var(--hairline); min-height: 52px;
+}
+.row .pick { all: unset; display: contents; cursor: pointer; }
+.row .pick:focus-visible .name { outline: 2px solid var(--focus); outline-offset: 3px; }
+.row.selected .name { font-weight: 600; }
+.swatch { width: 12px; height: 12px; border-radius: 50%; display: block; }
+.name { min-width: 0; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; cursor: pointer; }
+.code { font-family: var(--font-mono); font-size: 12px; color: var(--ink-muted); margin-left: 4px; }
+.rprice { font-weight: 500; font-variant-numeric: tabular-nums; cursor: pointer; }
+.star { border: 0; background: transparent; cursor: pointer; font-size: 18px; color: var(--ink-muted); width: 40px; height: 44px; }
+.star[aria-pressed="true"] { color: var(--step5); }
+.more { align-self: flex-start; border: 0; background: transparent; padding: 10px 0; cursor: pointer; font-size: 13px; font-weight: 600; letter-spacing: 0.08em; text-transform: uppercase; text-decoration: underline; text-underline-offset: 4px; }
+.empty { padding: 24px 0; color: var(--ink-muted); }
+
+.maphead { display: flex; justify-content: space-between; align-items: baseline; gap: 12px; flex-wrap: wrap; }
+.hint { font-size: 13px; color: var(--ink-muted); }
+#map { width: 100%; display: block; touch-action: manipulation; }
+#map .land { fill: var(--land); }
+#map .dot { cursor: pointer; stroke: var(--paper-raised); stroke-width: 2; }
+#map .dot.nofare { fill: var(--none); cursor: default; }
+#map .dot.sel { stroke: var(--ink); stroke-width: 2.5; }
+#map .origin { fill: var(--ink); }
+#map .olabel { fill: var(--ink); font: 600 12px var(--font-sans); }
+.legend { display: flex; gap: 8px 18px; flex-wrap: wrap; font-size: 13px; }
+.legend span { display: inline-flex; align-items: center; gap: 6px; }
+
+.card { background: var(--paper); padding: 18px 20px; display: grid; gap: 6px; }
+.card .label { font-size: 12px; font-weight: 600; letter-spacing: 0.04em; text-transform: uppercase; }
+.card .cname { font-family: var(--font-serif); font-size: 26px; line-height: 1.1; }
+.card .cname small { font-family: var(--font-sans); font-size: 14px; color: var(--ink-muted); margin-left: 6px; }
+.card .cprice { font-size: 20px; font-weight: 600; font-variant-numeric: tabular-nums; }
+.card .cmeta { font-size: 14px; color: var(--ink-muted); }
+.card .actions { display: flex; gap: 16px; align-items: center; flex-wrap: wrap; padding-top: 6px; }
+.card .live { font-size: 14px; font-weight: 600; }
+.card .cstar { border: 1px solid var(--hairline); background: transparent; border-radius: 4px; padding: 8px 12px; cursor: pointer; font-size: 14px; min-height: 40px; }
+.card .cstar[aria-pressed="true"] { border-color: var(--ink); }
+.spark { width: 100%; max-width: 320px; height: 56px; display: block; }
+.spark .ln { fill: none; stroke: var(--ink); stroke-width: 1.5; }
+.spark .base { stroke: var(--ink-muted); stroke-dasharray: 3 3; }
+.spark .end { fill: var(--step5); }
+.spark text { fill: var(--ink-muted); font: 11px var(--font-sans); }
+
+footer { border-top: 1px solid var(--hairline); padding-block: 32px 48px; color: var(--ink-muted); font-size: 14px; display: grid; gap: 10px; }
+footer p { margin: 0; max-width: 70ch; }
+.notice { padding: 16px 0; color: var(--ink-muted); }
+</style>
+</head>
+<body>
+<div class="wrap">
+  <nav class="top" aria-label="Main">
+    <a class="brand" href="./">
+      <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M2 11 L22 3 L16 21 L11 14 Z" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linejoin="round"/><path d="M11 14 L22 3" fill="none" stroke="currentColor" stroke-width="1.5"/></svg>
+      Paper Plane
+    </a>
+    <div class="navlinks">
+      <a href="#deals">Deals</a>
+      <a href="#map-panel">Map</a>
+      <a href="#deals" id="nav-watch">Watchlist</a>
+    </div>
+  </nav>
+
+  <header class="intro">
+    <h1>Where Cape Town can fly for less.</h1>
+    <p class="meta" id="meta">Loading today's fares…</p>
+  </header>
+
+  <section class="top3" id="top3" aria-label="Top three deals"></section>
+
+  <div class="main">
+    <section class="panel-list" id="deals" aria-labelledby="list-title">
+      <h2 id="list-title">Tracking destinations</h2>
+      <div class="chips" id="chips" role="group" aria-label="Filter by region"></div>
+      <div class="range">
+        <label for="maxprice">Up to <output id="maxout" for="maxprice">any price</output></label>
+        <input id="maxprice" type="range" min="3000" max="30000" step="500" value="30000">
+      </div>
+      <ul class="rows" id="rows"></ul>
+      <p class="empty" id="empty" hidden>No fares match these filters. Raise the price limit or pick another region.</p>
+      <button class="more" id="more" type="button" hidden></button>
+    </section>
+
+    <section class="panel-map" id="map-panel" aria-labelledby="map-title">
+      <div class="maphead">
+        <h2 id="map-title">Fares on the map</h2>
+        <span class="hint">Tap a dot to see its fare</span>
+      </div>
+      <svg id="map" role="group" aria-label="World map of fares from Cape Town"></svg>
+      <p class="notice" id="map-error" hidden>The map could not load. The list still shows every fare.</p>
+      <div class="legend" id="legend"></div>
+      <div class="card" id="card" aria-live="polite"></div>
+    </section>
+  </div>
+
+  <footer>
+    <p><strong>How the colours work.</strong> For each city, Paper Plane compares the cheapest departure date in the next three months with a typical date. Once a route has a week of its own daily history, it compares today's return fare with the route's 30-day median instead.</p>
+    <p>Prices are return, economy, per person, in rand. They come from recent searches cached by Travelpayouts (Aviasales), so check the live price before you book.</p>
+    <p>Built by Paper Plane for Frans at the Claude Community × stub workshop.</p>
+  </footer>
+</div>
+
+<script src="https://cdn.jsdelivr.net/npm/d3@7.9.0/dist/d3.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/topojson-client@3.1.0/dist/topojson-client.min.js"></script>
+<script>
+(() => {
+  const STEPS = [
+    { n: 5, min: 0.30, label: "Great deal", color: "var(--step5)", ink: "#ffffff" },
+    { n: 4, min: 0.20, label: "Good deal", color: "var(--step4)", ink: "#1d1a16" },
+    { n: 3, min: 0.10, label: "Fair", color: "var(--step3)", ink: "#1d1a16" },
+    { n: 2, min: 0.00, label: "Typical", color: "var(--step2)", ink: "#1d1a16" },
+    { n: 1, min: -Infinity, label: "Pricier", color: "var(--step1)", ink: "#ffffff" }
+  ];
+  const stepFor = s => s == null ? null : STEPS.find(x => s >= x.min);
+  const rand = n => "R" + Math.round(n).toLocaleString("en-ZA").replace(/[, ]/g, " ");
+  const fmtDay = s => s ? new Date(s + "T00:00:00").toLocaleDateString("en-ZA", { day: "numeric", month: "short" }) : "";
+  const $ = id => document.getElementById(id);
+
+  const store = {
+    get(k, d) { try { return JSON.parse(localStorage.getItem(k)) ?? d; } catch (e) { return d; } },
+    set(k, v) { try { localStorage.setItem(k, JSON.stringify(v)); } catch (e) {} }
+  };
+  const state = { region: "All", max: 30000, showAll: false, selected: null, watch: new Set(store.get("pp-watch", [])) };
+
+  let places, airlines, regions, origin, routes = [], byCode = {};
+
+  function scoreText(r) {
+    const s = r.deal_score;
+    if (s == null) return "Not enough price data yet";
+    const pct = Math.round(Math.abs(s) * 100);
+    if (r.score_basis === "history") return s >= 0 ? `${pct}% below its 30-day usual` : `${pct}% above its 30-day usual`;
+    return s >= 0 ? `Best date ${pct}% cheaper than a typical date` : `Best date ${pct}% above a typical date`;
+  }
+  function tripText(r) {
+    const airline = airlines[r.airline] || r.airline || "";
+    const stops = r.transfers == null ? "" : r.transfers === 0 ? "direct" : r.transfers === 1 ? "1 stop" : `${r.transfers} stops`;
+    return [`${fmtDay(r.depart_date)}–${fmtDay(r.return_date)}`, airline, stops].filter(Boolean).join(" · ");
+  }
+  function toggleWatch(code) {
+    state.watch.has(code) ? state.watch.delete(code) : state.watch.add(code);
+    store.set("pp-watch", [...state.watch]);
+    renderList(); renderCard();
+  }
+  function visible() {
+    return routes.filter(r =>
+      (state.region === "All" || (state.region === "Watchlist" ? state.watch.has(r.code) : r.place.region === state.region)) &&
+      r.price <= state.max);
+  }
+
+  function renderTop() {
+    const top = routes.slice(0, 3);
+    $("top3").innerHTML = "";
+    top.forEach((r, i) => {
+      const st = r.step || STEPS[3];
+      const b = document.createElement("button");
+      b.type = "button"; b.className = "tile";
+      b.style.background = st.color; b.style.color = st.ink;
+      b.setAttribute("aria-label", `${r.place.name}, ${rand(r.price)} return, ${scoreText(r)}. Show on map.`);
+      b.innerHTML = `<span class="rank">${i + 1} · ${r.step ? st.label : "Cheapest today"}</span>
+        <span class="body"><span class="to">Cape Town to</span><span class="city"></span>
+        <span class="price">${rand(r.price)} return</span><span class="small">${scoreText(r)}</span>
+        <span class="small meta-line">${tripText(r)}</span></span>`;
+      b.querySelector(".city").textContent = r.place.name;
+      b.addEventListener("click", () => select(r.code, true));
+      $("top3").appendChild(b);
+    });
+  }
+
+  function renderChips() {
+    const names = ["All", ...regions.filter(g => routes.some(r => r.place.region === g)), "Watchlist"];
+    $("chips").innerHTML = "";
+    names.forEach(n => {
+      const b = document.createElement("button");
+      b.type = "button"; b.className = "chip"; b.textContent = n === "Watchlist" ? "★ Watchlist" : n;
+      b.setAttribute("aria-pressed", state.region === n);
+      b.addEventListener("click", () => { state.region = n; state.showAll = false; renderChips(); renderList(); renderDots(); });
+      $("chips").appendChild(b);
+    });
+  }
+
+  function renderList() {
+    const rows = visible();
+    const shown = state.showAll ? rows : rows.slice(0, 12);
+    const ul = $("rows"); ul.innerHTML = "";
+    shown.forEach(r => {
+      const li = document.createElement("li");
+      li.className = "row" + (state.selected === r.code ? " selected" : "");
+      const sw = document.createElement("span"); sw.className = "swatch"; sw.style.background = r.step ? r.step.color : "var(--none)";
+      sw.title = r.step ? r.step.label : "No score yet";
+      const name = document.createElement("span"); name.className = "name"; name.tabIndex = 0; name.setAttribute("role", "button");
+      name.textContent = r.place.name; const code = document.createElement("span"); code.className = "code"; code.textContent = r.code; name.appendChild(code);
+      name.setAttribute("aria-label", `${r.place.name}, ${rand(r.price)}, ${r.step ? r.step.label : "no score yet"}. Show details.`);
+      const price = document.createElement("span"); price.className = "rprice"; price.textContent = rand(r.price);
+      const star = document.createElement("button"); star.type = "button"; star.className = "star";
+      star.setAttribute("aria-pressed", state.watch.has(r.code)); star.setAttribute("aria-label", `Watch ${r.place.name}`);
+      star.textContent = state.watch.has(r.code) ? "★" : "☆";
+      star.addEventListener("click", () => toggleWatch(r.code));
+      const go = () => select(r.code, window.matchMedia("(max-width: 999px)").matches);
+      name.addEventListener("click", go); price.addEventListener("click", go);
+      name.addEventListener("keydown", e => { if (e.key === "Enter" || e.key === " ") { e.preventDefault(); go(); } });
+      li.append(sw, name, price, star); ul.appendChild(li);
+    });
+    $("empty").hidden = rows.length > 0;
+    $("empty").textContent = state.region === "Watchlist" && !state.watch.size
+      ? "Your watchlist is empty. Tap ☆ next to a city to keep an eye on it."
+      : "No fares match these filters. Raise the price limit or pick another region.";
+    $("more").hidden = rows.length <= 12;
+    $("more").textContent = state.showAll ? "Show fewer" : `Show all ${rows.length}`;
+    $("maxout").textContent = state.max >= 30000 ? "any price" : rand(state.max);
+  }
+
+  function renderCard() {
+    const r = byCode[state.selected];
+    const card = $("card");
+    if (!r) { card.innerHTML = `<span class="cmeta">Tap a dot or a city in the list to see its fare, dates and price history.</span>`; return; }
+    const st = r.step;
+    card.innerHTML = `<span class="label"></span><span class="cname"></span>
+      <span class="cprice">${rand(r.price)} return</span><span class="cmeta"></span><span class="cmeta score"></span>
+      <div class="hist"></div>
+      <div class="actions"><a class="live" target="_blank" rel="noopener">Check the live price</a>
+      <button type="button" class="cstar"></button></div>`;
+    const label = card.querySelector(".label");
+    label.textContent = st ? st.label : "No score yet";
+    label.style.color = st && st.n >= 4 ? "var(--step5)" : "var(--ink-muted)";
+    const cname = card.querySelector(".cname"); cname.textContent = r.place.name;
+    const small = document.createElement("small"); small.textContent = r.place.country; cname.appendChild(small);
+    card.querySelectorAll(".cmeta")[0].textContent = tripText(r);
+    card.querySelector(".score").textContent = scoreText(r) + " · cached, unconfirmed";
+    const live = card.querySelector(".live");
+    live.href = r.link ? "https://www.aviasales.com" + r.link : "https://www.aviasales.com/";
+    const cstar = card.querySelector(".cstar");
+    cstar.setAttribute("aria-pressed", state.watch.has(r.code));
+    cstar.textContent = state.watch.has(r.code) ? "★ Watching" : "☆ Add to watchlist";
+    cstar.addEventListener("click", () => toggleWatch(r.code));
+    card.querySelector(".hist").appendChild(sparkline(r));
+  }
+
+  function sparkline(r) {
+    const h = r.history || [];
+    if (h.length < 2) {
+      const p = document.createElement("p"); p.className = "cmeta"; p.style.margin = "4px 0";
+      p.textContent = `Price history: day ${h.length || 1} of 30. The chart fills in as the daily check runs.`;
+      return p;
+    }
+    const W = 320, H = 56, pad = 6, prices = h.map(x => x.price);
+    const lo = Math.min(...prices, r.usual_price), hi = Math.max(...prices, r.usual_price);
+    const x = i => pad + i / (h.length - 1) * (W - pad * 2);
+    const y = v => hi === lo ? H / 2 : H - pad - (v - lo) / (hi - lo) * (H - pad * 2 - 12);
+    const svg = document.createElementNS("http://www.w3.org/2000/svg", "svg");
+    svg.setAttribute("viewBox", `0 0 ${W} ${H}`); svg.setAttribute("class", "spark");
+    svg.setAttribute("role", "img");
+    svg.setAttribute("aria-label", `Price over the last ${h.length} days, from ${rand(prices[0])} to ${rand(prices[prices.length - 1])}`);
+    const pts = h.map((p, i) => `${x(i).toFixed(1)},${y(p.price).toFixed(1)}`).join(" ");
+    svg.innerHTML = `<line class="base" x1="${pad}" x2="${W - pad}" y1="${y(r.usual_price)}" y2="${y(r.usual_price)}"/>
+      <polyline class="ln" points="${pts}"/><circle class="end" r="3.5" cx="${x(h.length - 1)}" cy="${y(prices[prices.length - 1])}"/>
+      <text x="${pad}" y="10">Last ${h.length} days · dashed line is the usual price</text>`;
+    return svg;
+  }
+
+  let projection, svgSel;
+  function drawMap(land) {
+    const el = $("map");
+    const width = el.clientWidth || 700;
+    const corners = { type: "MultiPoint", coordinates: [[-170, 72], [180, 72], [-170, -48], [180, -48], [15, 72], [15, -48]] };
+    projection = d3.geoNaturalEarth1().fitWidth(width, corners);
+    const [[, y0], [, y1]] = d3.geoPath(projection).bounds(corners);
+    const height = Math.round(y1 - y0);
+    projection.translate([projection.translate()[0], projection.translate()[1] - y0]);
+    svgSel = d3.select(el).attr("viewBox", `0 0 ${width} ${height}`).attr("height", height);
+    svgSel.selectAll("*").remove();
+    svgSel.append("path").attr("class", "land").attr("d", d3.geoPath(projection)(land));
+    svgSel.append("g").attr("class", "dots");
+    const [ox, oy] = projection([origin.lon, origin.lat]);
+    svgSel.append("rect").attr("class", "origin").attr("x", ox - 5).attr("y", oy - 5).attr("width", 10).attr("height", 10);
+    svgSel.append("text").attr("class", "olabel").attr("x", ox + 9).attr("y", oy + 4).text("Cape Town");
+    renderDots();
+  }
+
+  function renderDots() {
+    if (!svgSel) return;
+    const shown = new Set(visible().map(r => r.code));
+    const small = $("map").clientWidth < 500;
+    const items = Object.entries(places).map(([code, p]) => ({ code, p, r: byCode[code] }));
+    const g = svgSel.select("g.dots"); g.selectAll("*").remove();
+    items.sort((a, b) => (a.r?.step?.n || 0) - (b.r?.step?.n || 0) || (a.code === state.selected) - (b.code === state.selected));
+    items.forEach(({ code, p, r }) => {
+      const [x, y] = projection([p.lon, p.lat]);
+      const base = small ? 4 : 5.5;
+      const rad = r && r.step && r.step.n >= 4 ? base + 1.5 : base;
+      const c = g.append("circle").attr("cx", x).attr("cy", y).attr("r", code === state.selected ? rad + 2 : rad)
+        .attr("class", "dot" + (r ? "" : " nofare") + (code === state.selected ? " sel" : ""));
+      if (!r) { c.append("title").text(`${p.name}: no cached fare today`); return; }
+      c.style("fill", r.step ? r.step.color : "var(--none)").style("opacity", shown.has(code) ? 1 : 0.15)
+        .attr("tabindex", shown.has(code) ? 0 : -1).attr("role", "button")
+        .attr("aria-label", `${p.name}, ${rand(r.price)}, ${r.step ? r.step.label : "no score yet"}`)
+        .on("click", () => select(code, false))
+        .on("keydown", e => { if (e.key === "Enter" || e.key === " ") { e.preventDefault(); select(code, false); } });
+      c.append("title").text(`${p.name} · ${rand(r.price)}`);
+    });
+  }
+
+  function select(code, scroll) {
+    state.selected = code;
+    renderList(); renderDots(); renderCard();
+    if (scroll) $("card").scrollIntoView({ behavior: matchMedia("(prefers-reduced-motion: reduce)").matches ? "auto" : "smooth", block: "nearest" });
+  }
+
+  function renderLegend() {
+    $("legend").innerHTML = STEPS.map(s => `<span><i class="swatch" style="background:${s.color}"></i>${s.label}</span>`).join("") +
+      `<span><i class="swatch" style="background:var(--none)"></i>No fare today</span>`;
+  }
+
+  async function start() {
+    const [deals, meta] = await Promise.all([
+      fetch("data/deals.json", { cache: "no-cache" }).then(r => r.json()),
+      fetch("places.json").then(r => r.json())
+    ]);
+    places = meta.places; airlines = meta.airlines; regions = meta.regions; origin = meta.origin;
+    routes = deals.routes.filter(r => places[r.destination]).map(r => ({ ...r, code: r.destination, place: places[r.destination], step: stepFor(r.deal_score) }));
+    routes.sort((a, b) => (b.deal_score ?? -9) - (a.deal_score ?? -9) || a.price - b.price);
+    byCode = Object.fromEntries(routes.map(r => [r.code, r]));
+    const maxFare = Math.max(...routes.map(r => r.price), 3000);
+    $("maxprice").max = Math.ceil(maxFare / 1000) * 1000; state.max = +$("maxprice").max; $("maxprice").value = state.max;
+    const total = Object.keys(places).length;
+    const updated = new Date(deals.updated);
+    $("meta").innerHTML = `Updated ${updated.toLocaleDateString("en-ZA", { day: "numeric", month: "short" })} at ${updated.toLocaleTimeString("en-ZA", { hour: "2-digit", minute: "2-digit" })} · ${routes.length} of ${total} cities have fares today<br>Prices are cached from recent searches, not live`;
+    $("list-title").textContent = `Tracking ${total} destinations`;
+    state.selected = routes[0]?.code || null;
+    renderTop(); renderChips(); renderList(); renderLegend(); renderCard();
+
+    $("maxprice").addEventListener("input", e => {
+      state.max = +e.target.value; renderList(); renderDots();
+      if (+e.target.value >= +e.target.max) $("maxout").textContent = "any price";
+    });
+    $("more").addEventListener("click", () => { state.showAll = !state.showAll; renderList(); });
+    $("nav-watch").addEventListener("click", () => { state.region = "Watchlist"; renderChips(); renderList(); renderDots(); });
+
+    try {
+      const topo = await fetch("https://cdn.jsdelivr.net/npm/world-atlas@2.0.2/land-110m.json").then(r => r.json());
+      const land = topojson.feature(topo, topo.objects.land);
+      drawMap(land);
+      let t; addEventListener("resize", () => { clearTimeout(t); t = setTimeout(() => drawMap(land), 150); });
+    } catch (e) {
+      $("map").hidden = true; $("map-error").hidden = false;
+    }
+  }
+  start().catch(() => { $("meta").textContent = "Today's fares could not load. Try again in a minute."; });
+})();
+</script>
+</body>
+</html>

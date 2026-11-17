@@ -166,6 +166,8 @@ def build_deals(rows, today):
                 "dates": oneway_dates,
                 "score": round(spread, 3) if spread is not None else None,
             },
+            "history": [{"day": r["fetched_day"], "price": int(r["price"])}
+                        for r in history if r["fetched_day"] >= cutoff],
             "deal_score": round(score, 3) if score is not None else None,
             "score_basis": basis,
             "is_deal": score is not None and score >= DEAL_DROP,
@@ -197,6 +199,7 @@ def main():
             print(f"{origin}-{destination}: no cached fare")
             continue
         found += 1
+        time.sleep(0.2)
         try:
             spread = date_spread(token, origin, destination, currency, today)
         except (urllib.error.URLError, RuntimeError, ValueError) as err:
