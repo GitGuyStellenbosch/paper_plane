@@ -1,5 +1,5 @@
 {
-  "updated": "2026-11-17T19:50+02:00",
+  "updated": "2026-11-17T19:59+02:00",
   "origin": "CPT",
   "routes": [
     {
@@ -16,24 +16,15 @@
       "usual_price": 5095,
       "drop": 0.0,
       "days_of_history": 1,
-      "is_deal": false,
-      "status": "cached, unconfirmed"
-    },
-    {
-      "fetched_day": "2026-11-17",
-      "origin": "CPT",
-      "destination": "MRU",
-      "price": 11069,
-      "currency": "ZAR",
-      "airline": "SA",
-      "transfers": 1,
-      "depart_date": "2027-01-21",
-      "return_date": "2027-01-25",
-      "link": "/search/CPT2101MRU25011?t=MK18005220001800558600000490CPTJNBMRU18008670001800903300000725MRUJNBCPT_9af3e158d5267203195490551b802ec6_54205&search_date=15112026&expected_price_uuid=01a1e0e2-2294-8031-299e-1ea5b2e4dbdd&static_fare_key=TY%7CP0%7CH0%7CL0%7CCH0%7CR0%7CTBC0&itinerary_key=Tk-OcSRhJi2_JDBFY20Gug&expected_price_source=share&expected_price_currency=zar&expected_price=11069",
-      "usual_price": 11069,
-      "drop": 0.0,
-      "days_of_history": 1,
-      "is_deal": false,
+      "date_spread": {
+        "oneway_min": 2055,
+        "oneway_median": 3752,
+        "dates": 37,
+        "score": 0.452
+      },
+      "deal_score": 0.452,
+      "score_basis": "date_spread",
+      "is_deal": true,
       "status": "cached, unconfirmed"
     },
     {
@@ -50,23 +41,14 @@
       "usual_price": 11400,
       "drop": 0.0,
       "days_of_history": 1,
-      "is_deal": false,
-      "status": "cached, unconfirmed"
-    },
-    {
-      "fetched_day": "2026-11-17",
-      "origin": "CPT",
-      "destination": "LHR",
-      "price": 13560,
-      "currency": "ZAR",
-      "airline": "LH",
-      "transfers": 1,
-      "depart_date": "2026-12-01",
-      "return_date": "2026-12-06",
-      "link": "/search/CPT0112LHR06121?t=LH17961174001796165700000925CPTMUCLHR17965467001796629200001255LHRMUCCPT_01ccec009be48eafffa86521edccd621_66159&search_date=14112026&expected_price_uuid=01a1da75-0847-8030-2751-9a8f8547b109&static_fare_key=TY%7CP1%7CH1%7CL0%7CCH0%7CR0%7CTBC0&itinerary_key=dMy-vMAp6e-FDwm_BlqjHw&origin_airports=1&destination_airports=0&expected_price_source=share&expected_price_currency=zar&expected_price=13560",
-      "usual_price": 13560,
-      "drop": 0.0,
-      "days_of_history": 1,
+      "date_spread": {
+        "oneway_min": 7068,
+        "oneway_median": 9045,
+        "dates": 57,
+        "score": 0.219
+      },
+      "deal_score": 0.219,
+      "score_basis": "date_spread",
       "is_deal": false,
       "status": "cached, unconfirmed"
     },
@@ -84,6 +66,64 @@
       "usual_price": 14470,
       "drop": 0.0,
       "days_of_history": 1,
+      "date_spread": {
+        "oneway_min": 7964,
+        "oneway_median": 9726,
+        "dates": 43,
+        "score": 0.181
+      },
+      "deal_score": 0.181,
+      "score_basis": "date_spread",
+      "is_deal": false,
+      "status": "cached, unconfirmed"
+    },
+    {
+      "fetched_day": "2026-11-17",
+      "origin": "CPT",
+      "destination": "MRU",
+      "price": 11069,
+      "currency": "ZAR",
+      "airline": "SA",
+      "transfers": 1,
+      "depart_date": "2027-01-21",
+      "return_date": "2027-01-25",
+      "link": "/search/CPT2101MRU25011?t=MK18005220001800558600000490CPTJNBMRU18008670001800903300000725MRUJNBCPT_9af3e158d5267203195490551b802ec6_54205&search_date=15112026&expected_price_uuid=01a1e0e2-2294-8031-299e-1ea5b2e4dbdd&static_fare_key=TY%7CP0%7CH0%7CL0%7CCH0%7CR0%7CTBC0&itinerary_key=Tk-OcSRhJi2_JDBFY20Gug&expected_price_source=share&expected_price_currency=zar&expected_price=11069",
+      "usual_price": 11069,
+      "drop": 0.0,
+      "days_of_history": 1,
+      "date_spread": {
+        "oneway_min": 6308,
+        "oneway_median": 7464,
+        "dates": 64,
+        "score": 0.155
+      },
+      "deal_score": 0.155,
+      "score_basis": "date_spread",
+      "is_deal": false,
+      "status": "cached, unconfirmed"
+    },
+    {
+      "fetched_day": "2026-11-17",
+      "origin": "CPT",
+      "destination": "LHR",
+      "price": 13560,
+      "currency": "ZAR",
+      "airline": "LH",
+      "transfers": 1,
+      "depart_date": "2026-12-01",
+      "return_date": "2026-12-06",
+      "link": "/search/CPT0112LHR06121?t=LH17961174001796165700000925CPTMUCLHR17965467001796629200001255LHRMUCCPT_01ccec009be48eafffa86521edccd621_66159&search_date=14112026&expected_price_uuid=01a1da75-0847-8030-2751-9a8f8547b109&static_fare_key=TY%7CP1%7CH1%7CL0%7CCH0%7CR0%7CTBC0&itinerary_key=dMy-vMAp6e-FDwm_BlqjHw&origin_airports=1&destination_airports=0&expected_price_source=share&expected_price_currency=zar&expected_price=13560",
+      "usual_price": 13560,
+      "drop": 0.0,
+      "days_of_history": 1,
+      "date_spread": {
+        "oneway_min": 6750,
+        "oneway_median": 7574,
+        "dates": 18,
+        "score": 0.109
+      },
+      "deal_score": 0.109,
+      "score_basis": "date_spread",
       "is_deal": false,
       "status": "cached, unconfirmed"
     }
